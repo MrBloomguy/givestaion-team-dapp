@@ -127,7 +127,7 @@ export default function ViewRequests() {
 
 
     return (
-    <div className=' dark:bg-slate-900 '>
+    <div className=' dark:bg-slate-900 ' style={{ height:"100vh"}}>
         <Header />
 
         <section className="head pt-8 pb-4">
