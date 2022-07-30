@@ -69,7 +69,7 @@ export default function CreateRequest() {
     }
 
     return (
-    <div className=' bg-slate-900 '>
+    <div className=' bg-slate-900 ' style={{ height:"100vh" }}>
         <Header />
 
         <section className="head pt-8 pb-4">
