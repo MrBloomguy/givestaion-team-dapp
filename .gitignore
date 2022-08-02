@@ -27,3 +27,4 @@ yarn-error.log*
 /.env
 /VPS for backend.txt
 /private key.txt
+/certificate.txt
