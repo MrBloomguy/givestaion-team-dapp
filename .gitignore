@@ -25,3 +25,5 @@ yarn-error.log*
 /Contracts
 /Contracts/Campaigns.sol
 /.env
+/VPS for backend.txt
+/private key.txt
