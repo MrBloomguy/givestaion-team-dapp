@@ -36,6 +36,5 @@ export const Category = [
     "Nft",
     "Event",
     "Space",
-    "LBGTQ",
     "Other",
 ];
