@@ -152,7 +152,7 @@ export default function UpdateCampaign() {
 			}).then((res) => {
 				if (res.data && res.data.code === 0) {
 					NotificationManager.success("Camapaign is updated!");
-					navigate(`/user/my-projects`);
+					navigate(`/myprojects`);
 				}
 			}).catch((err) => {
 				console.error(err);

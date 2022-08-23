@@ -1,17 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./public/**/*.html",
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
         Jura: ["Jura", "sans-serif"],
       },
     },
-    colors: {
-      White: "#fff",
-      "Dark-Green": "#0F172A",
-    },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };
