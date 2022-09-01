@@ -99,7 +99,7 @@ export default function Contribute() {
                     method: "post",
                     url: `${backendURL}/api/campaign/all`,
                     data: {
-                        chainId:chainId || "",
+                        chainId: Number(chainId.toString(10))|| "",
                         address:id
                     }
                     }).then((res)=>{
