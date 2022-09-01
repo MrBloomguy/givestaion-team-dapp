@@ -101,7 +101,7 @@ export default function Sidebar() {
             <ul className="md:flex-col main-menu bg-sidebar min-h-screen md:min-w-full flex flex-col list-none pt-12">
               <li className="items-center">
                 <NavLink
-                  to={`/overview`}
+                  to={`/user/overview`}
                   className={(props) => {
                     return props.isActive
                       ? "capitalize inline-flex items-center pb-8 pl-16 pr-10 text-white whitespace-nowrap active"
@@ -121,7 +121,7 @@ export default function Sidebar() {
               { donorOrCreator === false && 
               <li className="items-center">
                 <NavLink
-                  to={`/my-projects`}
+                  to={`/user/my-projects`}
                   className={(props) => {
                     return props.isActive
                       ? "capitalize inline-flex items-center pb-8 pl-16 pr-10 text-white whitespace-nowrap active"
@@ -142,7 +142,7 @@ export default function Sidebar() {
 
               <li className="items-center">
                 <NavLink
-                  to={`/donations`}
+                  to={`/user/donations`}
                   className={(props) => {
                     return props.isActive
                       ? "capitalize inline-flex items-center pb-4 pl-16 pr-10 text-white whitespace-nowrap active"
@@ -165,7 +165,7 @@ export default function Sidebar() {
 
               <li className="items-center">
                 <NavLink
-                  to={`/favourites`}
+                  to={`/user/favourites`}
                   className={(props) => {
                     return props.isActive
                       ? "capitalize inline-flex items-center pb-8 pl-16 pr-10 text-white whitespace-nowrap active"

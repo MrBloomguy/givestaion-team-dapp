@@ -255,7 +255,7 @@ export default function Header() {
 										<div className="absolute top-12 bottom-12 right-6 bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700" style={{ zIndex:"1500" }}>
 											<ul  className="py-1 " 								
 											>
-												<li className="handCursor" onClick={() => { setShowLogoutMenu(!showLogoutMenu); navigate(`/overview`); }}>
+												<li className="handCursor" onClick={() => { setShowLogoutMenu(!showLogoutMenu); navigate(`/user/overview`); }}>
 													<span className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">Dashboard</span>
 												</li>
 												<li className="handCursor" onClick={() => { setShowLogoutMenu(!showLogoutMenu); onClickDisconnect(); }}>
@@ -348,7 +348,7 @@ export default function Header() {
 												<div className="w-full flex justify-center" style={{ marginTop: "10px", userSelect:"none", cursor:"pointer" }}>
 													<ul  className="py-1 " 								
 													>
-														<li className="handCursor" onClick={() => { setShowLogoutMenu(!showLogoutMenu); navigate(`/overview`); }}>
+														<li className="handCursor" onClick={() => { setShowLogoutMenu(!showLogoutMenu); navigate(`/user/overview`); }}>
 															<span className="block px-4 py-2 text-white">Dashboard</span>
 														</li>
 														<li className="handCursor" onClick={() => { setShowLogoutMenu(!showLogoutMenu); onClickDisconnect(); }}>

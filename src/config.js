@@ -37,6 +37,4 @@ export const Category = [
     "Event",
     "Space",
     "Other",
-    "Sponsorship",
-    "Scholarship",
 ];

@@ -65,6 +65,7 @@ export default function Contribute() {
                             address:id
                         }
                         }).then((res)=>{
+                            console.log("res  99 = ", res);
                             if(res.data && res.data.code === 0)
                             {
                                 let summaryFromDB = res.data.data[0] || [];

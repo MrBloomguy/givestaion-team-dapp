@@ -539,10 +539,10 @@ export default function Home() {
                     </div>
                     <div className="body">
                       <div className="flex flex-wrap justify-between">
-                        <h4 className='text-blue text-sm title mb-3 '>{data[5]}</h4>
+                        <h4 className='text-blue text-sm title mb-3 '>{data[5].length>45? data[5].substring(0, 45)+"...":data[5]}</h4>
                         <button className='bg-blue-light small-text font-normal px-2 text-xs py-1 mr-1'>{data[11]}</button>
                       </div>
-                      <p className='text-blue description mb-3'>{data[6]}</p>
+                      <p className='text-blue description mb-3'>{data[6].length>180 ? data[6].substring(0, 180)+"...": data[6]}</p>
                       <p className='para'>{"Raised"}</p>
                       <h6 className='content mb-5 mt-1 text-sm'>
                         {Number(data[1]?.toString() || "0").toFixed(3)}{" "}{chains[data[15]]?.nativeCurrency}

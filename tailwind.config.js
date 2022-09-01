@@ -1,17 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
+  darkMode: 'class',
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./public/**/*.html",
-    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+      "./src/**/*.{js,jsx,ts,tsx}",
+      "./public/**/*.html",
+      'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        Jura: ["Jura", "sans-serif"],
-      },
-    },
+      extend: {},
   },
-  plugins: [require("flowbite/plugin")],
-};
+  plugins: [require('flowbite/plugin')],
+}
