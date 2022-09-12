@@ -67,7 +67,7 @@ export default function CreateCampaign() {
 						creator: account || "",
 						category: category,
 						address: "",
-						chainId: Number(chainId.toString(10)) || ""
+						chainId: chainId || ""
 					}
 				}).then((res) => {
 					if (res.data && res.data.code === 0) {

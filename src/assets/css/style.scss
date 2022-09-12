@@ -308,7 +308,6 @@ a {
 }
 .banner {
   .container {
-    background: url("../../../public/images/banner.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat !important;
@@ -316,15 +315,16 @@ a {
     border-radius: 50px;
 
     @media (max-width: 500px) {
-      background: url("../../../public/images/bannerMob.png");
+      // background: url("../../../public/images/bannerMob.png");
       background-size: cover !important;
       padding: 50px 0 !important;
-      box-shadow: 2px 5px 61px rgba(104, 132, 255, 0.27);
+      // box-shadow: 2px 5px 61px rgba(104, 132, 255, 0.27);
       border-radius: 20px !important;
     }
 
     @media (max-width: 376px) {
-      padding: 35px 0 !important;
+      padding: 10px 0 !important;
+      padding-bottom: 20px !important;
     }
   }
 }
