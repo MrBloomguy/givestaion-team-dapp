@@ -14,6 +14,8 @@ export const ARBITRUM_NETWORK_ID = "42161";
 export const ARBITRUM_CHAIN_ID = "0xa4b1";
 export const MUMBAI_CHAIN_ID = "0x13881";
 export const MUMBAI_NETWORK_ID = "80001";
+export const GOERLI_CHAIN_ID = "0x5";
+export const GOERLI_NETWORK_ID = "5";
 
 export const DEFAULT_CHAIN_ID = RINKEBY_CHAIN_ID;
 
@@ -129,5 +131,19 @@ export const chains = {
         factoryAddress:"0xff28d45ccebc110a24340d9de14d29d3a08abdb8",
         givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
         blockScanUrl:"https://mumbai.polygonscan.com/"
+    },  
+    [GOERLI_CHAIN_ID]:{
+        rpcUrl:"https://goerli.infura.io/v3/",
+        nativeCurrency:"GoerliETH",
+        factoryAddress:"0xFf28D45CcEbC110A24340d9de14D29d3A08AbDb8",
+        givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
+        blockScanUrl:"https://goerli.etherscan.io/"
+    },  
+    [GOERLI_NETWORK_ID]:{
+        rpcUrl:"https://goerli.infura.io/v3/",
+        nativeCurrency:"GoerliETH",
+        factoryAddress:"0xFf28D45CcEbC110A24340d9de14D29d3A08AbDb8",
+        givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
+        blockScanUrl:"https://goerli.etherscan.io/"
     },
 }
