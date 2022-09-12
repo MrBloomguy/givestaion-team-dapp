@@ -5,8 +5,12 @@ import { store } from "./store";
 import { Provider } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import "react-notifications/lib/notifications.css";
-import "./App.css";
 import { NotificationContainer } from "react-notifications";
+
+import "./App.css";
+import "slick-carousel/slick/slick.css";
+
+import "slick-carousel/slick/slick-theme.css";
 
 function Index() {
   const [loading, setLoading] = useState(true);

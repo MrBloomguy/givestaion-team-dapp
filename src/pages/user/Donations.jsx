@@ -10,7 +10,7 @@ import { chains } from "../../smart-contract/chains_constants";
 import { updateDonations } from "../../store/actions/auth.actions";
 import PageHeader from "../../components/user/PageHeader";
 import Sidebar1 from "../../components/user/Sidebar1";
-import Header from "../../components/user/Header";
+import Header from "../../components/HeaderHome";
 import Card from "../../components/user/Card";
 
 export default function Donations() {
@@ -22,7 +22,7 @@ export default function Donations() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(true);
 
   useEffect(() => {
     const getDonationInfo = async () => {
@@ -69,42 +69,18 @@ export default function Donations() {
               <PageHeader heading={"Donations"} />
 
               <div className="py-5 space-y-2">
+              {
+                donations.length>0 &&   
+                donations.map((item, index) => (
                 <Card
-                  imgSrc="spin"
-                  desc="225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk"
-                  title="SpinSamurai 👘"
-                  btnText="$1125"
+                  key={index}
+                  imgSrc={`${backendURL}/${item.campaign?.imageURL}` || "spin" } 
+                  desc={ item.campaign?.description || "225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk" }
+                  title={item.campaign?.name || "SpinSamurai 👘" }
+                  btnText={(item.amount) > 0 ? item.amount :"0"}
                 />
-                <Card
-                  imgSrc="spin"
-                  desc="225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk"
-                  title="SpinSamurai 👘"
-                  btnText="$1125"
-                />{" "}
-                <Card
-                  imgSrc="spin"
-                  desc="225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk"
-                  title="SpinSamurai 👘"
-                  btnText="$1125"
-                />{" "}
-                <Card
-                  imgSrc="spin"
-                  desc="225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk"
-                  title="SpinSamurai 👘"
-                  btnText="$1125"
-                />{" "}
-                <Card
-                  imgSrc="spin"
-                  desc="225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk"
-                  title="SpinSamurai 👘"
-                  btnText="$1125"
-                />{" "}
-                <Card
-                  imgSrc="spin"
-                  desc="225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk"
-                  title="SpinSamurai 👘"
-                  btnText="$1125"
-                />
+                ))
+              }    
               </div>
             </div>
           </div>

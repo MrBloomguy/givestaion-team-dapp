@@ -21,6 +21,7 @@ import LikedCampaigns from "./pages/user/LikedCampaigns";
 import GivePoints from "./pages/user/GivePoints";
 import GiveFrens from "./pages/user/GiveFrens";
 import UpdateCampaign from "./pages/user/UpdateCampaign";
+import Hackathon from "./pages/Hackathon";
 
 function AppRoutes() {
   return (
@@ -35,17 +36,18 @@ function AppRoutes() {
           <Route path="/faq" element={<FaqOne />}></Route>
           <Route path="/alert" element={<Alert />}></Route>
           <Route path="/verify" element={<VerifyCampaigns />}></Route>
+          <Route path="/hackathon" element={<Hackathon />}></Route>
           {/* <Route path="/user" element={<UserLayout />}> */}
-            <Route path="/overview" element={<Overview />}></Route>
-            <Route path="/myprojects" element={<MyProjects />}></Route>
-            <Route
-              path="/my-projects/update/:id"
-              element={<UpdateCampaign />}
-            ></Route>
-            <Route path="/donations" element={<Donations />}></Route>
-            <Route path="/favourites" element={<LikedCampaigns />}></Route>
-            <Route path="/givepoints" element={<GivePoints />}></Route>
-            <Route path="/givefrens" element={<GiveFrens />}></Route>
+          <Route path="/overview" element={<Overview />}></Route>
+          <Route path="/myprojects" element={<MyProjects />}></Route>
+          <Route
+            path="/my-projects/update/:id"
+            element={<UpdateCampaign />}
+          ></Route>
+          <Route path="/donations" element={<Donations />}></Route>
+          <Route path="/favourites" element={<LikedCampaigns />}></Route>
+          <Route path="/givepoints" element={<GivePoints />}></Route>
+          <Route path="/givefrens" element={<GiveFrens />}></Route>
           {/* </Route> */}
           <Route path="*" element={<NotFound />}></Route>
         </Routes>

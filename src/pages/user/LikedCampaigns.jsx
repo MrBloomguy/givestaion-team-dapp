@@ -12,7 +12,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { backendURL } from "../../config";
 import Sidebar1 from "../../components/user/Sidebar1";
-import Header from "../../components/user/Header";
+import Header from "../../components/HeaderHome";
 import Card from "../../components/user/Card";
 import PageHeader from "../../components/user/PageHeader";
 
@@ -24,7 +24,7 @@ const LikedCampaigns = () => {
   const navigate = useNavigate();
   const [ip, setIP] = useState("");
 
-  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(true);
   const getLocationData = async () => {
     const res = await axios.get("https://geolocation-db.com/json/");
     setIP(res.data.IPv4);
@@ -93,47 +93,18 @@ const LikedCampaigns = () => {
             <div>
               <PageHeader heading={"Favourites"} />
               <div className="py-5 space-y-2">
+              {
+                likesInfo.length>0 && 
+                likesInfo.map((item, index) => (
                 <Card
-                  imgSrc="spin-small"
-                  desc="225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk"
-                  title="SpinSamurai 👘"
+                  key={index}
+                  imgSrc={item?.campaign? `${backendURL}/${item.campaign?.imageURL}` : ""}
+                  desc={ item.campaign?.description || "" }
+                  title={item?.campaign? item.campaign?.name : ""}
                   heart="heart"
                 />
-
-                <Card
-                  imgSrc="spin-small"
-                  desc="225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk"
-                  title="SpinSamurai 👘"
-                  heart="heart"
-                />
-
-                <Card
-                  imgSrc="spin-small"
-                  desc="225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk"
-                  title="SpinSamurai 👘"
-                  heart="heart"
-                />
-
-                <Card
-                  imgSrc="spin-small"
-                  desc="225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk"
-                  title="SpinSamurai 👘"
-                  heart="heart"
-                />
-
-                <Card
-                  imgSrc="spin-small"
-                  desc="225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk"
-                  title="SpinSamurai 👘"
-                  heart="heart"
-                />
-
-                <Card
-                  imgSrc="spin-small"
-                  desc="225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk"
-                  title="SpinSamurai 👘"
-                  heart="heart"
-                />
+                ))
+              }
               </div>
             </div>
           </div>

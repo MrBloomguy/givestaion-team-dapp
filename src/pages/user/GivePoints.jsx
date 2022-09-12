@@ -5,7 +5,7 @@ import { NotificationManager } from "react-notifications";
 import UserFooter from "../../components/user/UserFooter";
 import { chains } from "../../smart-contract/chains_constants";
 import Sidebar1 from "../../components/user/Sidebar1";
-import Header from "../../components/user/Header";
+import Header from "../../components/HeaderHome";
 import Card from "../../components/user/Card";
 import PageHeader from "../../components/user/PageHeader";
 
@@ -18,7 +18,7 @@ const GivePoints = () => {
   const globalWeb3 = useSelector((state) => state.auth.globalWeb3);
   const [gpAmount, setGpAmount] = useState(0);
   const [campaignCounts, setCampaignCounts] = useState(0);
-  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(true);
   const [isClaimed, setIsClaimed] = useState(false);
 
   const getGPInfo = async () => {
@@ -105,8 +105,8 @@ const GivePoints = () => {
                             {isClaimed ? (
                               <>
                                 You have succesfully claimed{" "}
-                                <span className="text-[#52DCF0]"> 50 </span>
-                                POINTS for donating to 3{" "}
+                                <span className="text-[#52DCF0]">{gpAmount}</span>
+                                POINTS for donating to {campaignCounts}{" "}
                                 <span className="text-[#52DF0]">
                                   {" "}
                                   campaigns
@@ -116,8 +116,8 @@ const GivePoints = () => {
                             ) : (
                               <>
                                 You have earned{" "}
-                                <span className="text-[#52DCF0]">50</span>{" "}
-                                GIVEPOINTS for donating to 3
+                                <span className="text-[#52DCF0]">{gpAmount}</span>{" "}
+                                GIVEPOINTS for donating to {campaignCounts}
                                 <span className="text-[#52DCF0]">
                                   {" "}
                                   campaigns
@@ -131,6 +131,7 @@ const GivePoints = () => {
                           <button
                             onClick={() => {
                               setIsClaimed(!isClaimed);
+                              onClickClaim();
                             }}
                             className={`${
                               isClaimed ? "btn-claimed" : "btn"
