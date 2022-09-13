@@ -102,7 +102,7 @@ const LikedCampaigns = () => {
                   desc={ item.campaign?.description || "" }
                   title={item?.campaign? item.campaign?.name : ""}
                   heart="heart"
-                />
+                />  
                 ))
               }
               </div>
