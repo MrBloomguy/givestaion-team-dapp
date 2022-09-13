@@ -322,9 +322,11 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
               </h2>
             </Link>
           }
-          <button className="text-left md:text-center hover:bg-[#00FBFF] hover:md:bg-[#09080C] md:bg-[#09080C] w-full lg:w-auto md:my-2 md:rounded-md py-2 px-4 shadow">
-            <span className="gradient-text text-base">Grants</span>
-          </button>
+          <Link to={"/"} >
+            <button className="text-left md:text-center hover:bg-[#00FBFF] hover:md:bg-[#09080C] md:bg-[#09080C] w-full lg:w-auto md:my-2 md:rounded-md py-2 px-4 shadow">            
+              <span className="gradient-text text-base">Grants</span>
+            </button>
+          </Link>
 
           <Link to={"/hackathon"} className="relative bg-[#09080C] w-full lg:w-auto my-2 rounded-md py-2 px-4 shadow">
             <span className="gradient-text text-base">Hackathons</span>
