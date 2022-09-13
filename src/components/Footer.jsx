@@ -12,7 +12,9 @@ export default function Footer() {
                         <div className="flex justify-between items-center flex-wrap w-full">
                             <div className="md:w-6/12 w-full lg:mb-0 mb-3">
                                 <NavLink className="flex items-center justify-center md:justify-start whitespace-nowrap" to="/">
-                                    <img className="h-12" src="/images/logo.png" alt="logo" />
+                                    <img className="h-12" 
+                                    src={`${window.location.origin}/images/logo.png`}
+                                    alt="logo" />
                                     <h4 className=' ml-1 font-medium text-xl title text-slate-800 dark:text-gray-100 tracking-widest'>GiveStation</h4>
                                 </NavLink>
                             </div>

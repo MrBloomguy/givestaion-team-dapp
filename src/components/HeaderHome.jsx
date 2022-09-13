@@ -258,7 +258,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
         <Link to={"/"} className="flex lg:hidden items-center">
           <img
             className="w-20 h-20 object-contain"
-            src="./images/logo.png"
+            src={`${window.location.origin}/images/logo.png`}
             alt="logo"
           />
           <h2 className="font-medium text-2xl text-[#09080C] dark:text-[#fff]">
@@ -292,7 +292,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
           <div className="flex items-center">
             <img
               className="w-16 h-16 object-contain"
-              src="./images/logo.png"
+              src={`${window.location.origin}/images/logo.png`}
               alt="logo"
             />
             <h2 className="font-medium text-2xl text-[#fff]">
@@ -314,7 +314,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
             <Link to={"/"} className="hidden lg:flex items-center">
               <img
                 className="w-20 h-20 object-contain"
-                src="./images/logo.png"
+                src={`${window.location.origin}/images/logo.png`}
                 alt="logo"
               />
               <h2 className="font-medium text-2xl text-[#09080C] dark:text-[#fff]">

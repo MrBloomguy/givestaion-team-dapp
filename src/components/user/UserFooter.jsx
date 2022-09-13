@@ -15,7 +15,7 @@ const UserFooter = ({ style }) => {
         <Link to={"/"} className="flex items-center">
           <img
             className="w-20 h-20 object-contain"
-            src="./images/logo.png"
+            src={`${window.location.origin}/images/logo.png`}
             alt="logo"
           />
           <h1 className="dark:text-[#fff] text-[#09080C] font-medium text-2xl">
