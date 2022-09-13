@@ -41,7 +41,7 @@ function AppRoutes() {
           <Route path="/overview" element={<Overview />}></Route>
           <Route path="/myprojects" element={<MyProjects />}></Route>
           <Route
-            path="/my-projects/update/:id"
+            path="/myprojects/update/:id"
             element={<UpdateCampaign />}
           ></Route>
           <Route path="/donations" element={<Donations />}></Route>
