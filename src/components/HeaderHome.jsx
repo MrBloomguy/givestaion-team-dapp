@@ -334,7 +334,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
             </div>
           </Link>
           <button className="text-left md:text-center hover:bg-[#00FBFF] hover:md:bg-[#09080C] md:bg-[#09080C] w-full lg:w-auto md:my-2 md:rounded-md py-2 px-4 shadow">
-            <span className="gradient-text text-base">Governance</span>
+            <a href="https://snapshot.org/#/?q=GiveStation" target="_blank" ><span className="gradient-text text-base">Governance</span></a>
           </button>
         </div>
         <div className="px-8 md:px-0 mt-5 md:mt-0 space-y-3 lg:space-y-0 lg:space-x-3 flex flex-col lg:flex-row  lg:items-center">
