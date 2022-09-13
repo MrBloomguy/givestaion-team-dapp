@@ -347,7 +347,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 isOptimisimOpen ? " px-10 " : " px-3 "
               } py-2`}
             >
-              <img src={`../../assets/images/${activeIcon}`} alt="op" />
+              {active? <img src={`../../assets/images/${activeIcon}`} alt="op" /> : <></>}
               <span className="gradient-text text-base ml-5">{active || "Select a network"}</span>
             </button>
 
