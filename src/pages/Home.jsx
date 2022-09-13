@@ -12,10 +12,14 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   ARBITRUM_NETWORK_ID,
   BSC_NETWORK_ID,
+  BSC_TEST_NETWORK_ID,
   chains,
   GNOSIS_NETWORK_ID,
+  GOERLI_NETWORK_ID,
+  MUMBAI_NETWORK_ID,
   OPTIMISTIC_NETWORK_ID,
   POLYGON_NETWORK_ID,
+  TEST_ARBITRUM_NETWORK_ID,
 } from "../smart-contract/chains_constants";
 import {
   setNativePriceOnUSD,
@@ -94,6 +98,10 @@ export default function Home() {
       OPTIMISTIC_NETWORK_ID,
       ARBITRUM_NETWORK_ID,
       GNOSIS_NETWORK_ID,
+      TEST_ARBITRUM_NETWORK_ID,
+      GOERLI_NETWORK_ID,
+      MUMBAI_NETWORK_ID,
+      BSC_TEST_NETWORK_ID
     ];
 
     for (let idx = 0; idx < consideringChains.length; idx++) {
