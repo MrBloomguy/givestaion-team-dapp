@@ -25,16 +25,13 @@ const UserFooter = ({ style }) => {
         <div>
           <ul className="flex items-center space-x-4">
             <li className="dark:text-[#fff] text-[#09080C] font-normal text-lg">
-              Github
+              <a href={"https://github.com/GiveStation"}  target="_blank" > Github </a>
             </li>
             <li className="dark:text-[#fff] text-[#09080C] font-normal text-lg">
-              Telegram
+              <a href={"https://t.me/GiveStation"}  target="_blank" > Telegram </a>
             </li>
             <li className="dark:text-[#fff] text-[#09080C] font-normal text-lg">
-              Twitter
-            </li>
-            <li className="dark:text-[#fff] text-[#09080C] font-normal text-lg">
-              FAQ
+              <a href={"https://twitter.com/GiveStation"}  target="_blank" > Twitter </a>
             </li>
           </ul>
         </div>
@@ -43,7 +40,7 @@ const UserFooter = ({ style }) => {
             Want to be a partner?
           </p>
           <button className="bg-[#09C9E3] rounded-lg py-2 px-5 text-[#fff] font-semibold">
-            Contact Us
+            <a href={"https://mailto:info@givestation.org"}  target="_blank" > Contact Us </a>
           </button>
         </div>
       </div>

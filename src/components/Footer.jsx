@@ -18,9 +18,9 @@ export default function Footer() {
                             </div>
                             <div className="md:w-6/12 w-full lg:mb-0 mb-6">
                                 <ul className="flex justify-center md:justify-end">
-                                    <li className="mr-9"><NavLink className='text-gray-700  dark:text-gray-100 font-bold' to="/page-two">Github</NavLink></li>
-                                    <li className="mr-9"><NavLink className='text-gray-700  dark:text-gray-100 font-bold' to="/page-three">Telegram</NavLink></li>
-                                    <li className="mr-9"><NavLink className='text-gray-700  dark:text-gray-100 font-bold' to="/page-three">Twitter</NavLink></li>
+                                    <li className="mr-9"><a className='text-gray-700  dark:text-gray-100 font-bold' href="https://github.com/GiveStation" target="_blank" >Github</a></li>
+                                    <li className="mr-9"><a className='text-gray-700  dark:text-gray-100 font-bold' href="https://t.me/GiveStation" target="_blank" >Telegram</a></li>
+                                    <li className="mr-9"><a className='text-gray-700  dark:text-gray-100 font-bold' href=" https://twitter.com/GiveStation" target="_blank" >Twitter</a></li>
                                 </ul>
                             </div>
                         </div>
