@@ -78,7 +78,7 @@ const MyProjects = () => {
                     <div className="rounded-lg bg-[#131420] p-2 flex flex-col md:flex-row space-x-3" key={index} >
                       <img
                         className="rounded-lg"
-                        src={`${backendURL}/${item?.imageURL}` || "./assets/images/casino.png" }
+                        src={item?.imageURL || "./assets/images/casino.png" }
                         style={{ width:"348px", height:"200px", alignSelf:"center"}}
                         alt="casino"
                       />

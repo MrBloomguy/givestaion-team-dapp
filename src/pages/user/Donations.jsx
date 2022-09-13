@@ -74,7 +74,7 @@ export default function Donations() {
                 donations.map((item, index) => (
                 <Card
                   key={index}
-                  imgSrc={`${backendURL}/${item.campaign?.imageURL}` || "spin" } 
+                  imgSrc={item.campaign?.imageURL || "./assets/images/casino.png"} 
                   desc={ item.campaign?.description || "225% up to AU$ 5,000 jhgfjjhghjkkkhgj jhjkkkkhhkjhjkljhjklk hjkljhjlljkhklljklljklljk" }
                   title={item.campaign?.name || "SpinSamurai 👘" }
                   btnText={(item.amount) > 0 ? item.amount :"0"}

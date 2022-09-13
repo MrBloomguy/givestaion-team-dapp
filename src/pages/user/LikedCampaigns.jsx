@@ -98,7 +98,7 @@ const LikedCampaigns = () => {
                 likesInfo.map((item, index) => (
                 <Card
                   key={index}
-                  imgSrc={item?.campaign? `${backendURL}/${item.campaign?.imageURL}` : ""}
+                  imgSrc={item?.campaign? item.campaign?.imageURL : "./assets/images/casino.png"}
                   desc={ item.campaign?.description || "" }
                   title={item?.campaign? item.campaign?.name : ""}
                   heart="heart"
