@@ -65,18 +65,18 @@ export const chains = {
         blockScanUrl:"https://optimistic.etherscan.io/"
     },
     [GNOSIS_CHAIN_ID]:{
-        rpcUrl:"https://rpc.gnosischain.com/",
-        nativeCurrency:"xDai",
-        factoryAddress:"",
-        givePointAddress:"",
-        blockScanUrl:"https://blockscout.com/xdai/mainnet/"
+        rpcUrl:"https://rpc.ankr.com/gnosis",
+        nativeCurrency:"xDAI",
+        factoryAddress:"0x3aB361aA65FF78d42B40E3c5b2Dbdede3D392C25",
+        givePointAddress:"0x06e131CD3DE20bbCd14a684bf743aC8BC37aa949",
+        blockScanUrl:"https://gnosisscan.io"
     },
     [GNOSIS_NETWORK_ID]:{
-        rpcUrl:"https://rpc.gnosischain.com/",
-        nativeCurrency:"xDai",
-        factoryAddress:"",
-        givePointAddress:"",
-        blockScanUrl:"https://blockscout.com/xdai/mainnet/"
+        rpcUrl:"https://rpc.ankr.com/gnosis",
+        nativeCurrency:"xDAI",
+        factoryAddress:"0x3aB361aA65FF78d42B40E3c5b2Dbdede3D392C25",
+        givePointAddress:"0x06e131CD3DE20bbCd14a684bf743aC8BC37aa949",
+        blockScanUrl:"https://gnosisscan.io"
     },
     [ARBITRUM_CHAIN_ID]:{
         rpcUrl:"https://arb1.arbitrum.io/rpc",

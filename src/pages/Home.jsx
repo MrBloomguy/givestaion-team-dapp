@@ -688,10 +688,10 @@ export default function Home() {
                     <div className="body">
                       <div className="flex flex-wrap justify-between">
                         <h4 className="text-blue text-sm title mb-3 ">
-                          {data[5]}
+                          {data[5]?.toString().length>30? data[5].toString().substring(0, 30)+"..." : data[5]}
                         </h4>
                         <button className="bg-blue-light small-text font-normal px-2 text-xs py-1 mr-1">
-                          {data[11]}
+                          {data[11]?.toString().length>300? data[11].toString().substring(0, 300)+"..." : data[11]}
                         </button>
                       </div>
                       <p className="text-blue description mb-3 min-h-[250px]">{subStr(data[6])}</p>

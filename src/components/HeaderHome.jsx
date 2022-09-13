@@ -25,6 +25,12 @@ import {
   OPTIMISTIC_NETWORK_ID,
   BSC_TEST_CHAIN_ID,
   BSC_TEST_NETWORK_ID,
+  GOERLI_NETWORK_ID,
+  GOERLI_CHAIN_ID,
+  TEST_ARBITRUM_CHAIN_ID,
+  TEST_ARBITRUM_NETWORK_ID,
+  MUMBAI_CHAIN_ID,
+  MUMBAI_NETWORK_ID,
 } from "../smart-contract/chains_constants";
 import Alert from "../pages/Alert";
 
@@ -313,7 +319,6 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
           <button className="text-left md:text-center hover:bg-[#00FBFF] hover:md:bg-[#09080C] md:bg-[#09080C] w-full lg:w-auto md:my-2 md:rounded-md py-2 px-4 shadow">
             <span className="gradient-text text-base">Governance</span>
           </button>
-          <button></button>
         </div>
         <div className="px-8 md:px-0 mt-5 md:mt-0 space-y-3 lg:space-y-0 lg:space-x-3 flex flex-col lg:flex-row  lg:items-center">
           <div className="relative">
@@ -348,66 +353,66 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 />
               </div>
               {
-                chainId && (chainId.toString() === OPTIMISTIC_CHAIN_ID || chainId.toString() === OPTIMISTIC_CHAIN_ID) ?
+                chainId && (chainId.toString() === GOERLI_NETWORK_ID || chainId.toString() === GOERLI_CHAIN_ID) ?
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
                     <img src="../../assets/images/op.png" alt="op" />
-                    <span className="text-lg ml-3"> Optimism</span>
+                    <span className="text-lg ml-3">Goerli testnet</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
                 </div>
                 :
                 <div className="flex my-1 items-center hover:bg-[#242A38] cursor-pointer  px-0 py-2 rounded-lg"
-                  onClick={() => onClickChangeNetwork(OPTIMISTIC_CHAIN_ID) }>
+                  onClick={() => onClickChangeNetwork(GOERLI_CHAIN_ID) }>
                   <img
                     className="w-8 h-8 mr-3"
                     src="../../assets/images/op.png"
                     alt="optimism"
                   />{" "}
-                  <h2 className="font-medium text-sm">Optimism</h2>
+                  <h2 className="font-medium text-sm">Goerli testnet</h2>
                 </div>
               } 
               {
-                chainId && (chainId.toString() === ARBITRUM_CHAIN_ID || chainId.toString() === ARBITRUM_NETWORK_ID) ?
+                chainId && (chainId.toString() === TEST_ARBITRUM_CHAIN_ID || chainId.toString() === TEST_ARBITRUM_NETWORK_ID) ?
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
                     <img src="../../assets/images/arbitrum.png" alt="op" />
-                    <span className="text-lg ml-3"> Arbitrum</span>
+                    <span className="text-lg ml-3"> Arbitrum testnet</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
                 </div>
                 :
                 <div className="flex my-1 items-center hover:bg-[#242A38] cursor-pointer  px-0 py-2 rounded-lg"
-                  onClick={() => onClickChangeNetwork(ARBITRUM_CHAIN_ID) }>
+                  onClick={() => onClickChangeNetwork(TEST_ARBITRUM_CHAIN_ID) }>
                   <img
                     className="w-8 h-8 mr-3"
                     src="../../assets/images/arbitrum.png"
                     alt="arbitrum"
                   />{" "}
-                  <h2 className="font-medium text-sm">Arbitrum</h2>
+                  <h2 className="font-medium text-sm">Arbitrum testnet</h2>
                 </div>
               }
               {
-                chainId && (chainId.toString() === POLYGON_CHAIN_ID || chainId.toString() === POLYGON_NETWORK_ID) ?
+                chainId && (chainId.toString() === MUMBAI_CHAIN_ID || chainId.toString() === MUMBAI_NETWORK_ID) ?
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
                     <img src="../../assets/images/polygon.png" alt="op" />
-                    <span className="text-lg ml-3"> Polygon</span>
+                    <span className="text-lg ml-3">Polygon testnet</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
                 </div>
                 :
                 <div className="flex my-1 items-center hover:bg-[#242A38] cursor-pointer  px-0 py-2 rounded-lg"
-                  onClick={() => onClickChangeNetwork(POLYGON_CHAIN_ID) }>
+                  onClick={() => onClickChangeNetwork(MUMBAI_CHAIN_ID) }>
                   <img
                     className="w-8 h-8 mr-3"
                     src="../../assets/images/polygon.png"
                     alt="polygon"
                   />
-                  <h2 className="font-medium text-sm">Polygon</h2>
+                  <h2 className="font-medium text-sm">Polygon testnet</h2>
                 </div>
               }
               {
@@ -433,25 +438,25 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 </div>
               }
               {
-                chainId && (chainId.toString() === BSC_CHAIN_ID || chainId.toString() === BSC_NETWORK_ID) ?
+                chainId && (chainId.toString() === BSC_TEST_CHAIN_ID || chainId.toString() === BSC_TEST_NETWORK_ID) ?
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
                     <img src="../../assets/images/binance.png" alt="op" />
-                    <span className="text-lg ml-3"> Binance</span>
+                    <span className="text-lg ml-3"> Binance testnet</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
                 </div>
                 :
                 <div className="flex my-1 items-center hover:bg-[#242A38] cursor-pointer  px-0 py-2 rounded-lg"
-                  onClick={() => onClickChangeNetwork(BSC_CHAIN_ID)}
+                  onClick={() => onClickChangeNetwork(BSC_TEST_CHAIN_ID)}
                 >
                   <img
                     className="w-8 h-8 mr-3"
                     src="../../assets/images/binance.png"
                     alt="binance"
                   />
-                  <h2 className="font-medium text-sm">Binance</h2>
+                  <h2 className="font-medium text-sm">Binance testnet</h2>
                 </div>
               }
             </div>
