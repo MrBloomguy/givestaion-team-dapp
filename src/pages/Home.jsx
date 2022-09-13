@@ -399,7 +399,7 @@ export default function Home() {
   };
 
   const subStr = (string) => {
-    return string.length > 500 ? `${string.substring(0,500)}...` : string;
+    return string.length > 300 ? `${string.substring(0,300)}...` : string;
   };
 
   return loading ? (
