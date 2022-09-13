@@ -171,28 +171,45 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
     switch (chainId && chainId.toString()) {
       default:
         break;
+      case GOERLI_CHAIN_ID:
+      case GOERLI_NETWORK_ID:
+        setActive("Goerli testnet");
+        setActiveIcon("op.png");
+        setPopup(false);
+        break;
       case OPTIMISTIC_CHAIN_ID:
       case OPTIMISTIC_NETWORK_ID:
         setActive("Optimism");
         setActiveIcon("op.png");
         setPopup(false);
         break;
-      case BSC_CHAIN_ID:
-      case BSC_NETWORK_ID:
-        setActive("Binance");
-        setActiveIcon("protocol.png");
+      case BSC_TEST_CHAIN_ID:
+      case BSC_TEST_NETWORK_ID:
+        setActive("Binance testnet");
+        setActiveIcon("binance.png");
         setPopup(false);
         break;
+      case TEST_ARBITRUM_CHAIN_ID:
+      case TEST_ARBITRUM_NETWORK_ID:
+        setActive("Arbitrum testnet");
+        setActiveIcon("arbitrum.png");
+        setPopup(false);
       case ARBITRUM_CHAIN_ID:
       case ARBITRUM_NETWORK_ID:
         setActive("Arbitrum");
-        setActiveIcon("symbol.png");
+        setActiveIcon("arbitrum.png");
+        setPopup(false);
+        break;
+      case MUMBAI_CHAIN_ID:
+      case MUMBAI_NETWORK_ID:
+        setActive("Polygon testnet");
+        setActiveIcon("polygon.png");
         setPopup(false);
         break;
       case POLYGON_CHAIN_ID:
       case POLYGON_NETWORK_ID:
         setActive("Polygon");
-        setActiveIcon("group.png");
+        setActiveIcon("polygon.png");
         setPopup(false);
         break;
       case GNOSIS_CHAIN_ID:
@@ -204,7 +221,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
       case BSC_TEST_CHAIN_ID:
       case BSC_TEST_NETWORK_ID:
         setActive("BSC Testnet");
-        setActiveIcon("protocol.png");
+        setActiveIcon("binance.png");
         setPopup(false);
         break;
     }
@@ -330,8 +347,8 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 isOptimisimOpen ? " px-10 " : " px-3 "
               } py-2`}
             >
-              <img src="../../assets/images/op.png" alt="op" />
-              <span className="gradient-text text-base ml-5"> Optimism</span>
+              <img src={`../../assets/images/${activeIcon}`} alt="op" />
+              <span className="gradient-text text-base ml-5">{active || "Select a network"}</span>
             </button>
 
             <div
