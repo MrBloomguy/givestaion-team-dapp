@@ -109,15 +109,15 @@ export const chains = {
     [MUMBAI_CHAIN_ID]:{
         rpcUrl:"https://matic-mumbai.chainstacklabs.com",
         nativeCurrency:"MATIC",
-        factoryAddress:"0x4b5626425A62458aa1A5256c75bF678B5e90C2bA",
-        givePointAddress:"0x7DD7d0e4985363051e993C3EABAf6493A7691F50",
+        factoryAddress:"0x3aB361aA65FF78d42B40E3c5b2Dbdede3D392C25",
+        givePointAddress:"0x06e131CD3DE20bbCd14a684bf743aC8BC37aa949",
         blockScanUrl:"https://mumbai.polygonscan.com/"
     },
     [MUMBAI_NETWORK_ID]:{
         rpcUrl:"https://matic-mumbai.chainstacklabs.com",
         nativeCurrency:"MATIC",
-        factoryAddress:"0x4b5626425A62458aa1A5256c75bF678B5e90C2bA",
-        givePointAddress:"0x7DD7d0e4985363051e993C3EABAf6493A7691F50",
+        factoryAddress:"0x3aB361aA65FF78d42B40E3c5b2Dbdede3D392C25",
+        givePointAddress:"0x06e131CD3DE20bbCd14a684bf743aC8BC37aa949",
         blockScanUrl:"https://mumbai.polygonscan.com/"
     },  
     [GOERLI_CHAIN_ID]:{
