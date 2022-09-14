@@ -20,7 +20,7 @@ export default function Contribute() {
     const [donationAmount, setDonationAmount] = useState(0);
     const [campaignIdOnDB, setCampaignIdOnDB] = useState(null);
     const [copied, setCopied] = useState(false);
-    const [donatingPopup, showDonatingPopup] = useState(false);
+    const [donatingPopup, showDonatingPopup] = useState(true);
     
     const chainId = useSelector(state => state.auth.currentChainId);
     const account = useSelector(state => state.auth.currentWallet);
@@ -339,7 +339,7 @@ export default function Contribute() {
                             <div className="px-3 text-center">
                                 <h6 className='text-sm md:text-2xl mt-3 mb-1 text-white font-bold'>Donating...Please wait.</h6>
                                 <div className='flex justify-center'>
-                                    <img src="/images/donating_spin.png" alt="casual" className='mx-auto' />
+                                    <img src="/images/donating_spin.png" alt="casual" className='donating_spin' />
                                 </div>
                             </div>
                         </div>
