@@ -702,7 +702,7 @@ export default function Home() {
                           {data[11]?.toString().length>300? data[11].toString().substring(0, 300)+"..." : data[11]}
                         </button>
                       </div>
-                      <p className="text-blue description mb-3 min-h-[250px]">{subStr(data[6])}</p>
+                      <p className="text-blue description mb-3 min-h-[50px]">{subStr(data[6])}</p>
                       <p className="para">{"Raised"}</p>
                       <h6 className="content mb-5 mt-1 text-sm">
                         {Number(data[1]?.toString() || "0").toFixed(3)}{" "}
