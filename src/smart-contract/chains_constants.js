@@ -95,43 +95,29 @@ export const chains = {
     [BSC_TEST_CHAIN_ID]:{
         rpcUrl:"https://data-seed-prebsc-1-s1.binance.org:8545/",
         nativeCurrency:"tBNB",
-        factoryAddress:"0x39fD8c1DD05e8DB92245a8d9e91283728113CB04",
-        givePointAddress:"0x681Fe7444B998964a134B9223013EBdC10f70280",
+        factoryAddress:"0xf34CA450cCa10066346faC51afEADEE84FAe308b",
+        givePointAddress:"0xaDf78c7D786B00517A147c7db87Cd223443202CF",
         blockScanUrl:"https://testnet.bscscan.com/"
     },
     [BSC_TEST_NETWORK_ID]:{
         rpcUrl:"https://data-seed-prebsc-1-s1.binance.org:8545/",
         nativeCurrency:"tBNB",
-        factoryAddress:"0x39fD8c1DD05e8DB92245a8d9e91283728113CB04",
-        givePointAddress:"0x681Fe7444B998964a134B9223013EBdC10f70280",
+        factoryAddress:"0xf34CA450cCa10066346faC51afEADEE84FAe308b",
+        givePointAddress:"0xaDf78c7D786B00517A147c7db87Cd223443202CF",
         blockScanUrl:"https://testnet.bscscan.com/"
     },
-    [RINKEBY_CHAIN_ID]:{
-        rpcUrl:"https://rinkeby.infura.io/v3/08ac79d88b5d4aea961ca36af7ea6ee7",
-        nativeCurrency:"ETH",
-        factoryAddress:"",
-        givePointAddress:"",
-        blockScanUrl:"https://rinkeby.etherscan.io/"
-    },
-    [RINKEBY_NETWORK_ID]:{
-        rpcUrl:"https://rinkeby.infura.io/v3/08ac79d88b5d4aea961ca36af7ea6ee7",
-        nativeCurrency:"ETH",
-        factoryAddress:"",
-        givePointAddress:"",
-        blockScanUrl:"https://rinkeby.etherscan.io/"
-    },    
     [MUMBAI_CHAIN_ID]:{
         rpcUrl:"https://matic-mumbai.chainstacklabs.com",
         nativeCurrency:"MATIC",
-        factoryAddress:"0xff28d45ccebc110a24340d9de14d29d3a08abdb8",
-        givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
+        factoryAddress:"0x4b5626425A62458aa1A5256c75bF678B5e90C2bA",
+        givePointAddress:"0x7DD7d0e4985363051e993C3EABAf6493A7691F50",
         blockScanUrl:"https://mumbai.polygonscan.com/"
     },
     [MUMBAI_NETWORK_ID]:{
         rpcUrl:"https://matic-mumbai.chainstacklabs.com",
         nativeCurrency:"MATIC",
-        factoryAddress:"0xff28d45ccebc110a24340d9de14d29d3a08abdb8",
-        givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
+        factoryAddress:"0x4b5626425A62458aa1A5256c75bF678B5e90C2bA",
+        givePointAddress:"0x7DD7d0e4985363051e993C3EABAf6493A7691F50",
         blockScanUrl:"https://mumbai.polygonscan.com/"
     },  
     [GOERLI_CHAIN_ID]:{
