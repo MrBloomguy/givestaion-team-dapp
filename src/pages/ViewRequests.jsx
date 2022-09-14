@@ -259,7 +259,7 @@ export default function ViewRequests() {
                         <div className="connect-popup mx-auto">
                             <div className="popup-head py-6 px-6 flex justify-between items-center">
                                 <NavLink className="handcursor closebtn" to="/" onClick={() => { showApprovePopup(!approvePopup); }}>
-                                    <img src="/images/closebtn.png" alt="close" className='ml-auto' />
+                                    <img src="/images/emoji _clapping hands_.png" alt="close" className='ml-auto' />
                                 </NavLink>
                             </div>
                             <div className="px-3 text-center">
