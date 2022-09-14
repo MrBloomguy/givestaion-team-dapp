@@ -203,6 +203,14 @@ body {
   border-radius: 24px;
   padding-bottom: 25px;
 }
+.request-popup {
+  width: 512px;
+  height: fit-content;
+  background: linear-gradient(180deg, #09c9e3 0%, #5e0c91 70%, #000001 100%);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding-bottom: 25px;
+}
 .popup-other {
   .connect-popup {
     border-radius: 46.2248px;

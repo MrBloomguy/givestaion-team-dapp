@@ -8,6 +8,7 @@ import { chains } from '../smart-contract/chains_constants';
 import axios from 'axios';
 import { backendURL } from '../config';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import Confetti from "react-confetti";
 const Campaign = require("../smart-contract/build/Campaign.json");
 
 export default function ViewRequests() {
@@ -15,6 +16,7 @@ export default function ViewRequests() {
     const [summary, setSummary] = useState({});
     const [campaignIdOnDB, setCampaignIdOnDB] = useState(null);
     const [approvePopup, showApprovePopup] = useState(false);
+    const [finalizePopup, showFinalizePopup] = useState(false);
     
     const chainId = useSelector(state => state.auth.currentChainId);
     const account = useSelector(state => state.auth.currentWallet);
@@ -75,6 +77,7 @@ export default function ViewRequests() {
                     gas: 3000000
                 });
                 getRequestsFromCampaign();
+                showApprovePopup(true);
             }else{
                 console.log("creating a approve request : Invalid campaign instance");
             }
@@ -115,6 +118,7 @@ export default function ViewRequests() {
                         console.error(err);    
                     });
                 getRequestsFromCampaign();
+                showFinalizePopup(true);
             }
             else{
                 console.log("Finalysing requests: invalid campaign instance");
@@ -256,25 +260,54 @@ export default function ViewRequests() {
             <section className="popup fixed w-full top-0 left-0 z-50 min-h-screen flex items-center justify-center">
                 <div className="popup-other">
                     <div className="container">
-                        <div className="connect-popup mx-auto">
+                        <div className="request-popup mx-auto">
                             <div className="popup-head py-6 px-6 flex justify-between items-center">
                                 <NavLink className="handcursor closebtn" to="/" onClick={() => { showApprovePopup(!approvePopup); }}>
-                                    <img src="/images/emoji _clapping hands_.png" alt="close" className='ml-auto' />
+                                    <img src="/images/closebtn.png" alt="close" className='ml-auto' />
                                 </NavLink>
                             </div>
                             <div className="px-3 text-center">
                                 <div className='flex justify-center'>
-                                    <img src="/images/creation complete.png" alt="casual" className='mx-auto' />
+                                    <img src="/images/emoji _clapping hands_.png" alt="casual" className='mx-auto' />
                                 </div>
-                                <h6 className='text-sm md:text-2xl mt-3 mb-1 text-white font-bold'>you have successfully created a new grant!</h6>
-                                <p className='text-xs md:text-lg mb-5 text-white'>Wishing you the very best</p>
-                                <div className="flex w-11/12 md:w-8/12 mx-auto input-group">
-                                    <input type="text" disabled id="website-admin" className="rounded-none rounded-l-xl bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-xs border-gray-300 py-3 px-5 placeholder-gray-800" placeholder="Share your grant on Twitter" />
-                                   
-                                        <button className="inline-flex items-center text-sm text-white bg-light-blue rounded-r-xl border-0 border-r-0 px-4 md:px-9 py-3 font-medium">
-                                           
+                                <h6 className='text-sm md:text-2xl mt-3 mb-1 text-white font-bold'>You have successfully approved payment of this grant.</h6>
+                                <p className='text-xs md:text-lg mb-5 text-white'>We appreciate your support.</p>
+                                <div className="flex w-11/12 md:w-8/12 mx-auto input-group" style={{justifyContent: "center" }}>
+                                    <NavLink to="/">
+                                    <button className="inline-flex items-center text-sm text-white bg-light-blue rounded-tl-xl rounded-r-xl border-0 border-r-0 px-4 md:px-9 py-3 font-medium">
+                                        See more grants
+                                    </button>
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </> : ''}
+
+        {finalizePopup ? <>
+            <section className="popup fixed w-full top-0 left-0 z-50 min-h-screen flex items-center justify-center">
+                <div className="popup-other">
+                    <div className="container">
+                        <div className="request-popup mx-auto">
+                            <div className="popup-head py-6 px-6 flex justify-between items-center">
+                                <NavLink className="handcursor closebtn" to="/" onClick={() => { showFinalizePopup(!finalizePopup); }}>
+                                    <img src="/images/closebtn.png" alt="close" className='ml-auto' />
+                                </NavLink>
+                            </div>
+                            <div className="px-3 text-center">
+                                <div className='flex justify-center'>
+                                    <img src="/images/emoji _rocket_.png" alt="casual" className='mx-auto' />
+                                </div>
+                                <h6 className='text-sm md:text-2xl mt-3 mb-1 text-white font-bold'>You have successfully finalized payment of this grant.</h6>
+                                <p className='text-xs md:text-lg mb-5 text-white'>Check your wallet to withdraw funds.</p>
+                                <div className="flex w-11/12 md:w-8/12 mx-auto input-group" style={{justifyContent: "center" }}>
+                                    <NavLink to="/create-campaign">
+                                        <button className="inline-flex items-center text-sm text-white bg-light-blue rounded-tl-xl rounded-r-xl border-0 border-r-0 px-4 md:px-9 py-3 font-medium">
+                                            Create a grant
                                         </button>
-                                    
+                                    </NavLink>
                                 </div>
                             </div>
                         </div>
@@ -284,6 +317,9 @@ export default function ViewRequests() {
         </> : ''}
 
         <UserFooter />
+        {
+            (approvePopup || finalizePopup) && <Confetti />
+        }
     </div>
   )
 }
