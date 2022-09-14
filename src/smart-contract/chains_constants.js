@@ -67,15 +67,15 @@ export const chains = {
     [GNOSIS_CHAIN_ID]:{
         rpcUrl:"https://rpc.ankr.com/gnosis",
         nativeCurrency:"xDAI",
-        factoryAddress:"0x3aB361aA65FF78d42B40E3c5b2Dbdede3D392C25",
-        givePointAddress:"0x06e131CD3DE20bbCd14a684bf743aC8BC37aa949",
+        factoryAddress:"0x072CFC391B46426808Ad92906a939362E290994a",
+        givePointAddress:"0x9A1175970B9940F6AFECd740dF70b148aA0Ab525",
         blockScanUrl:"https://gnosisscan.io"
     },
     [GNOSIS_NETWORK_ID]:{
         rpcUrl:"https://rpc.ankr.com/gnosis",
         nativeCurrency:"xDAI",
-        factoryAddress:"0x3aB361aA65FF78d42B40E3c5b2Dbdede3D392C25",
-        givePointAddress:"0x06e131CD3DE20bbCd14a684bf743aC8BC37aa949",
+        factoryAddress:"0x072CFC391B46426808Ad92906a939362E290994a",
+        givePointAddress:"0x9A1175970B9940F6AFECd740dF70b148aA0Ab525",
         blockScanUrl:"https://gnosisscan.io"
     },
     [ARBITRUM_CHAIN_ID]:{
@@ -123,29 +123,29 @@ export const chains = {
     [GOERLI_CHAIN_ID]:{
         rpcUrl:"https://goerli.infura.io/v3/",
         nativeCurrency:"GoerliETH",
-        factoryAddress:"0xFf28D45CcEbC110A24340d9de14D29d3A08AbDb8",
-        givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
+        factoryAddress:"0xCA091f771124dF584620af06C43ddF49e0BB502D",
+        givePointAddress:"0x18a12dfeAB833b7D391D22bCb6002f1CD25B838B",
         blockScanUrl:"https://goerli.etherscan.io/"
     },  
     [GOERLI_NETWORK_ID]:{
         rpcUrl:"https://goerli.infura.io/v3/",
         nativeCurrency:"GoerliETH",
-        factoryAddress:"0xFf28D45CcEbC110A24340d9de14D29d3A08AbDb8",
-        givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
+        factoryAddress:"0xCA091f771124dF584620af06C43ddF49e0BB502D",
+        givePointAddress:"0x18a12dfeAB833b7D391D22bCb6002f1CD25B838B",
         blockScanUrl:"https://goerli.etherscan.io/"
     },
     [TEST_ARBITRUM_CHAIN_ID]:{
         rpcUrl:"https://rinkeby.arbitrum.io/rpc",
         nativeCurrency:"ETH",
-        factoryAddress:"0xff28d45ccebc110a24340d9de14d29d3a08abdb8",
-        givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
+        factoryAddress:"0xCA091f771124dF584620af06C43ddF49e0BB502D",
+        givePointAddress:"0x18a12dfeAB833b7D391D22bCb6002f1CD25B838B",
         blockScanUrl:"https://testnet.arbiscan.io/"
     },  
     [TEST_ARBITRUM_NETWORK_ID]:{
         rpcUrl:"https://rinkeby.arbitrum.io/rpc",
         nativeCurrency:"ETH",
-        factoryAddress:"0xff28d45ccebc110a24340d9de14d29d3a08abdb8",
-        givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
+        factoryAddress:"0xCA091f771124dF584620af06C43ddF49e0BB502D",
+        givePointAddress:"0x18a12dfeAB833b7D391D22bCb6002f1CD25B838B",
         blockScanUrl:"https://testnet.arbiscan.io/"
     },  
 }
