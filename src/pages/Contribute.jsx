@@ -20,7 +20,7 @@ export default function Contribute() {
     const [donationAmount, setDonationAmount] = useState(0);
     const [campaignIdOnDB, setCampaignIdOnDB] = useState(null);
     const [copied, setCopied] = useState(false);
-    const [donatingPopup, showDonatingPopup] = useState(true);
+    const [donatingPopup, showDonatingPopup] = useState(false);
     
     const chainId = useSelector(state => state.auth.currentChainId);
     const account = useSelector(state => state.auth.currentWallet);
