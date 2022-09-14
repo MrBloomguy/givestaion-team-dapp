@@ -48,11 +48,10 @@ export default function CreateRequest() {
                 {
                     await campaign.methods.createRequest(
                         description || "",
-                        globalWeb3.utils.toWei(amount.toString(), "ether"),
+                        globalWeb3.utils.toWei(amount.toString(), "ether").toString(),
                         recipient || ""
                     ).send({
-                        from: account, 
-                        gas: 3000000
+                        from: account
                     });
                     navigate(`/campaign/${id}`);
                 }

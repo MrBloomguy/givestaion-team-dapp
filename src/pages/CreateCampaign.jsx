@@ -85,15 +85,15 @@ export default function CreateCampaign() {
 						CampaignFactory,
 						chains[chainId?.toString()].factoryAddress
 					);
+					console.log("chains[chainId?.toString()].factoryAddress = ", chains[chainId?.toString()].factoryAddress);
 					if (factory) {
+						console.log("factory.methods = ", factory.methods);
 						await factory.methods.createCampaign(
-							globalWeb3.utils.toWei(minimum.toString(), "ether"),
-							globalWeb3.utils.toWei(target.toString(), "ether"),
-							idOnDb
-						)
-							.send({
-								from: account,
-								gas: 3000000
+							globalWeb3.utils.toWei(minimum.toString(), "ether").toString() || "10000000000000000",
+							globalWeb3.utils.toWei(target.toString(), "ether").toString() || "100000000000000000000",
+							idOnDb.toString()
+						).send({
+								from: account
 							});
 						
 						let summary = [], campais = [];
