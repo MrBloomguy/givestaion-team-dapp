@@ -7,12 +7,14 @@ import UserFooter from '../components/user/UserFooter';
 import { chains } from '../smart-contract/chains_constants';
 import axios from 'axios';
 import { backendURL } from '../config';
+import CopyToClipboard from 'react-copy-to-clipboard';
 const Campaign = require("../smart-contract/build/Campaign.json");
 
 export default function ViewRequests() {
     const [requests, setRequests] = useState([]);
     const [summary, setSummary] = useState({});
     const [campaignIdOnDB, setCampaignIdOnDB] = useState(null);
+    const [approvePopup, showApprovePopup] = useState(false);
     
     const chainId = useSelector(state => state.auth.currentChainId);
     const account = useSelector(state => state.auth.currentWallet);
@@ -249,6 +251,37 @@ export default function ViewRequests() {
             </section>
 
         </>}
+
+        {approvePopup ? <>
+            <section className="popup fixed w-full top-0 left-0 z-50 min-h-screen flex items-center justify-center">
+                <div className="popup-other">
+                    <div className="container">
+                        <div className="connect-popup mx-auto">
+                            <div className="popup-head py-6 px-6 flex justify-between items-center">
+                                <NavLink className="handcursor closebtn" to="/" onClick={() => { showApprovePopup(!approvePopup); }}>
+                                    <img src="/images/closebtn.png" alt="close" className='ml-auto' />
+                                </NavLink>
+                            </div>
+                            <div className="px-3 text-center">
+                                <div className='flex justify-center'>
+                                    <img src="/images/creation complete.png" alt="casual" className='mx-auto' />
+                                </div>
+                                <h6 className='text-sm md:text-2xl mt-3 mb-1 text-white font-bold'>you have successfully created a new grant!</h6>
+                                <p className='text-xs md:text-lg mb-5 text-white'>Wishing you the very best</p>
+                                <div className="flex w-11/12 md:w-8/12 mx-auto input-group">
+                                    <input type="text" disabled id="website-admin" className="rounded-none rounded-l-xl bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-xs border-gray-300 py-3 px-5 placeholder-gray-800" placeholder="Share your grant on Twitter" />
+                                   
+                                        <button className="inline-flex items-center text-sm text-white bg-light-blue rounded-r-xl border-0 border-r-0 px-4 md:px-9 py-3 font-medium">
+                                           
+                                        </button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </> : ''}
 
         <UserFooter />
     </div>
