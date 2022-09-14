@@ -95,15 +95,15 @@ export const chains = {
     [BSC_TEST_CHAIN_ID]:{
         rpcUrl:"https://data-seed-prebsc-1-s1.binance.org:8545/",
         nativeCurrency:"tBNB",
-        factoryAddress:"0xf34CA450cCa10066346faC51afEADEE84FAe308b",
-        givePointAddress:"0xaDf78c7D786B00517A147c7db87Cd223443202CF",
+        factoryAddress:"0xDeED26c6D70B82525d992c8014a547EbC40e3d07",
+        givePointAddress:"0x7F0e88974e9Cde51e2FeAc141D356225Be2355DA",
         blockScanUrl:"https://testnet.bscscan.com/"
     },
     [BSC_TEST_NETWORK_ID]:{
         rpcUrl:"https://data-seed-prebsc-1-s1.binance.org:8545/",
         nativeCurrency:"tBNB",
-        factoryAddress:"0xf34CA450cCa10066346faC51afEADEE84FAe308b",
-        givePointAddress:"0xaDf78c7D786B00517A147c7db87Cd223443202CF",
+        factoryAddress:"0xDeED26c6D70B82525d992c8014a547EbC40e3d07",
+        givePointAddress:"0x7F0e88974e9Cde51e2FeAc141D356225Be2355DA",
         blockScanUrl:"https://testnet.bscscan.com/"
     },
     [MUMBAI_CHAIN_ID]:{

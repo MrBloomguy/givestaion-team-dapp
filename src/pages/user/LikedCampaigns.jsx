@@ -40,7 +40,7 @@ const LikedCampaigns = () => {
       url: `${backendURL}/api/likes/getAllLikedCampaigns`,
       data: {
         user: ip || "",
-        chainId: chainId || "",
+        chainId: Number(chainId.toString(10)) || "",
       },
     })
       .then((res) => {

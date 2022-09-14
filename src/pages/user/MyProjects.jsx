@@ -30,7 +30,7 @@ const MyProjects = () => {
         url: `${backendURL}/api/campaign/getCampaignsOfUser`,
         data: {
           user: account || "",
-          chainId: chainId || "",
+          chainId: Number(chainId.toString(10)) || "",
         },
       })
         .then((res) => {

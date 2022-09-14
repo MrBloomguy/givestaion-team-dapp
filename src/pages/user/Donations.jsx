@@ -32,7 +32,7 @@ export default function Donations() {
           url: `${backendURL}/api/donation/getDonationsOfUser`,
           data: {
             user: account || "",
-            chainId: chainId || "",
+            chainId: Number(chainId.toString(10)) || "",
           },
         })
           .then((res) => {

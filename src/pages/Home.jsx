@@ -123,7 +123,7 @@ export default function Home() {
               method: "post",
               url: `${backendURL}/api/nativePrices/set`,
               data: {
-                chainId: chainId,
+                chainId: Number(chainId.toString(10)),
                 price: nativePri,
               },
             })
@@ -210,7 +210,7 @@ export default function Home() {
           method: "post",
           url: `${backendURL}/api/campaign/all`,
           data: {
-            chainId: chainId,
+            chainId: Number(chainId.toString(10)),
           },
         })
           .then((res) => {
@@ -252,7 +252,7 @@ export default function Home() {
           url: `${backendURL}/api/likes/getAllLikedCampaigns`,
           data: {
             user: ip || "",
-            chainId: chainId || "",
+            chainId: Number(chainId.toString(10)) || "",
           },
         })
           .then((res) => {
@@ -326,7 +326,7 @@ export default function Home() {
       url: `${backendURL}/api/likes/getAllLikedCampaigns`,
       data: {
         user: ip || "",
-        chainId: chainId || "",
+        chainId: Number(chainId.toString(10)) || "",
       },
     })
       .then((res) => {

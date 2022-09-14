@@ -67,7 +67,7 @@ export default function CreateCampaign() {
 						creator: account || "",
 						category: category,
 						address: "",
-						chainId: chainId || ""
+						chainId: Number(chainId.toString(10)) || ""
 					}
 				}).then((res) => {
 					if (res.data && res.data.code === 0) {
@@ -91,11 +91,13 @@ export default function CreateCampaign() {
 						await factory.methods.createCampaign(
 							globalWeb3.utils.toWei(minimum.toString(), "ether").toString() || "10000000000000000",
 							globalWeb3.utils.toWei(target.toString(), "ether").toString() || "100000000000000000000",
-							idOnDb.toString()
+							idOnDb
 						).send({
 								from: account
 							});
 						
+							console.log("createdCampaignAddress = ", createdCampaignAddress);
+
 						let summary = [], campais = [];
 						if (factory) {
 							campais = await factory.methods.getDeployedCampaigns().call();
@@ -105,6 +107,7 @@ export default function CreateCampaign() {
 							)
 							);
 						}
+						console.log("summary = ", summary);
 						for (let idx = 0; idx < summary.length; idx++) 
 						{
 						  if (summary[idx][10] == idOnDb) 
