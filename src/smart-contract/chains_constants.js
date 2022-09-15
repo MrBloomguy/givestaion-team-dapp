@@ -14,8 +14,8 @@ export const ARBITRUM_NETWORK_ID = "42161";
 export const ARBITRUM_CHAIN_ID = "0xa4b1";
 export const MUMBAI_CHAIN_ID = "0x13881";
 export const MUMBAI_NETWORK_ID = "80001";
-export const GOERLI_CHAIN_ID = "0x5";
-export const GOERLI_NETWORK_ID = "5";
+export const GOERLI_CHAIN_ID = "0x1a4";
+export const GOERLI_NETWORK_ID = "420";
 export const TEST_ARBITRUM_CHAIN_ID = "0x66eeb";
 export const TEST_ARBITRUM_NETWORK_ID = "421611";
 
@@ -121,17 +121,17 @@ export const chains = {
         blockScanUrl:"https://mumbai.polygonscan.com/"
     },  
     [GOERLI_CHAIN_ID]:{
-        rpcUrl:"https://goerli.infura.io/v3/",
+        rpcUrl:"https://goerli.optimism.io/",
         nativeCurrency:"GoerliETH",
-        factoryAddress:"0xCA091f771124dF584620af06C43ddF49e0BB502D",
-        givePointAddress:"0x18a12dfeAB833b7D391D22bCb6002f1CD25B838B",
+        factoryAddress:"0xFf28D45CcEbC110A24340d9de14D29d3A08AbDb8",
+        givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
         blockScanUrl:"https://goerli.etherscan.io/"
     },  
     [GOERLI_NETWORK_ID]:{
-        rpcUrl:"https://goerli.infura.io/v3/",
+        rpcUrl:"https://goerli.optimism.io/",
         nativeCurrency:"GoerliETH",
-        factoryAddress:"0xCA091f771124dF584620af06C43ddF49e0BB502D",
-        givePointAddress:"0x18a12dfeAB833b7D391D22bCb6002f1CD25B838B",
+        factoryAddress:"0xFf28D45CcEbC110A24340d9de14D29d3A08AbDb8",
+        givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
         blockScanUrl:"https://goerli.etherscan.io/"
     },
     [TEST_ARBITRUM_CHAIN_ID]:{

@@ -377,7 +377,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 >
                   <div className="flex items-center">
                     <img src={`${window.location.origin}/assets/images/op.png`} alt="op" />
-                    <span className="text-lg ml-3">Goerli testnet</span>
+                    <span className="text-lg ml-3">Optimism Goerli </span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
                 </div>
@@ -389,7 +389,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                     src={`${window.location.origin}/assets/images/op.png`}
                     alt="optimism"
                   />{" "}
-                  <h2 className="font-medium text-sm">Goerli testnet</h2>
+                  <h2 className="font-medium text-sm">Optimism Goerli </h2>
                 </div>
               } 
               {
