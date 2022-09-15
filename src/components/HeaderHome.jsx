@@ -173,7 +173,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
         break;
       case GOERLI_CHAIN_ID:
       case GOERLI_NETWORK_ID:
-        setActive("Goerli testnet");
+        setActive("Optimism Goerli ");
         setActiveIcon("op.png");
         setPopup(false);
         break;
