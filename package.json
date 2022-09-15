@@ -50,7 +50,7 @@
     "xhr2-cookies": "^1.1.0"
   },
   "scripts": {
-    "build": "set \"GENERATE_SOURCEMAP=false\" && react-app-rewired build && gulp licenses",
+    "build": "set \"GENERATE_SOURCEMAP=false\" && react-app-rewired build",
     "start": "react-app-rewired start",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
