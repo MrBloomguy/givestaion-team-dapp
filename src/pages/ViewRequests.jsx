@@ -155,17 +155,12 @@ export default function ViewRequests() {
 
         { requests.length > 0 ? <>
             
-            <section className="main">
+            <section className="">
                 <div className="container">
                     <div className="relative overflow-x-auto shadow-md bg-dark py-4">
                         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 py-5 pb-10">
                             <thead className="text-xs text-gray-300 uppercase dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
-                                    <th scope="col" className=" px-4 py-6">
-                                        <div className="flex items-center">
-                                            <input type="checkbox" className="w-4 h-4 text-blue-600 bg-dark border-gray-700 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        </div>
-                                    </th>
                                     <th scope="col" className="px-6 py-6">
                                         ID
                                     </th>
@@ -192,11 +187,6 @@ export default function ViewRequests() {
                             <tbody className='text-gray-300'>
                                 {requests.map((item, index) =>(
                                     <tr className="dark:bg-gray-800 py-8" key={index}>
-                                        <td className="w-4 p-4">
-                                            <div className="flex items-center">
-                                                <input type="checkbox" className="w-4 h-4 text-blue-600 bg-dark border-gray-700 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            </div>
-                                        </td>
                                         <td className="px-6 py-4">
                                             {index + 1}
                                         </td>
@@ -241,7 +231,7 @@ export default function ViewRequests() {
             </section>
 
         </>:<>
-            <section className="main py-24 text-center">
+            <section className=" text-center ">
                 <div className="container">
                     <h1 className='dark-text my-4 text-xl font-bold dark:text-gray-100'>No request for this grant</h1>
                     <p className='dark-text mb-4 text-lg dark:text-gray-100'>Kindly create a withdrawal request to withdraw funds from this campaign.</p>

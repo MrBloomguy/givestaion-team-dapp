@@ -275,7 +275,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 setIsOpen(!isOpen);
               }}
               className=" cursor-pointer w-5 h-5 "
-              src="./assets/icons/opener.svg"
+              src={`${window.location.origin}/assets/icons/opener.svg`}
               alt="opener"
             />
           </div>
@@ -304,7 +304,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
               setIsOpen(!isOpen);
             }}
             className="ml-5 lg:hidden cursor-pointer"
-            src="../../assets/icons/close.svg"
+            src={`${window.location.origin}/assets/icons/close.svg`}
             alt="close"
           />
         </div>
@@ -349,7 +349,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 isOptimisimOpen ? " px-10 " : " px-3 "
               } py-2`}
             >
-              {active? <img src={`../../assets/images/${activeIcon}`} alt="op" /> : <></>}
+              {active? <img src={`${window.location.origin}/assets/images/${activeIcon}`} alt="op" /> : <></>}
               <span className="gradient-text text-base ml-5">{active || "Select a network"}</span>
             </button>
 
@@ -367,7 +367,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                     setIsOptimisimOpen(!isOptimisimOpen);
                   }}
                   className="cursor-pointer"
-                  src="../../assets/icons/close.svg"
+                  src={`${window.location.origin}/assets/icons/close.svg`}
                   alt="close"
                 />
               </div>
@@ -376,7 +376,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
-                    <img src="../../assets/images/op.png" alt="op" />
+                    <img src={`${window.location.origin}/assets/images/op.png`} alt="op" />
                     <span className="text-lg ml-3">Goerli testnet</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
@@ -386,7 +386,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                   onClick={() => onClickChangeNetwork(GOERLI_CHAIN_ID) }>
                   <img
                     className="w-8 h-8 mr-3"
-                    src="../../assets/images/op.png"
+                    src={`${window.location.origin}/assets/images/op.png`}
                     alt="optimism"
                   />{" "}
                   <h2 className="font-medium text-sm">Goerli testnet</h2>
@@ -397,7 +397,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
-                    <img src="../../assets/images/arbitrum.png" alt="op" />
+                    <img src={`${window.location.origin}/assets/images/arbitrum.png`} alt="op" />
                     <span className="text-lg ml-3"> Arbitrum testnet</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
@@ -407,7 +407,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                   onClick={() => onClickChangeNetwork(TEST_ARBITRUM_CHAIN_ID) }>
                   <img
                     className="w-8 h-8 mr-3"
-                    src="../../assets/images/arbitrum.png"
+                    src={`${window.location.origin}/assets/images/arbitrum.png`}
                     alt="arbitrum"
                   />{" "}
                   <h2 className="font-medium text-sm">Arbitrum testnet</h2>
@@ -418,7 +418,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
-                    <img src="../../assets/images/polygon.png" alt="op" />
+                    <img src={`${window.location.origin}/assets/images/polygon.png`} alt="op" />
                     <span className="text-lg ml-3">Polygon testnet</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
@@ -428,7 +428,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                   onClick={() => onClickChangeNetwork(MUMBAI_CHAIN_ID) }>
                   <img
                     className="w-8 h-8 mr-3"
-                    src="../../assets/images/polygon.png"
+                    src={`${window.location.origin}/assets/images/polygon.png`}
                     alt="polygon"
                   />
                   <h2 className="font-medium text-sm">Polygon testnet</h2>
@@ -439,7 +439,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
-                    <img src="../../assets/images/gnosis.png" alt="op" />
+                    <img src={`${window.location.origin}/assets/images/gnosis.png`} alt="op" />
                     <span className="text-lg ml-3"> Gnosis</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
@@ -450,7 +450,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 >
                   <img
                     className="w-8 h-8 mr-3"
-                    src="../../assets/images/gnosis.png"
+                    src={`${window.location.origin}/assets/images/gnosis.png`}
                     alt="gnosis"
                   />
                   <h2 className="font-medium text-sm">Gnosis</h2>
@@ -461,7 +461,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
-                    <img src="../../assets/images/binance.png" alt="op" />
+                    <img src={`${window.location.origin}/assets/images/binance.png`} alt="op" />
                     <span className="text-lg ml-3"> Binance testnet</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
@@ -472,7 +472,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 >
                   <img
                     className="w-8 h-8 mr-3"
-                    src="../../assets/images/binance.png"
+                    src={`${window.location.origin}/assets/images/binance.png`}
                     alt="binance"
                   />
                   <h2 className="font-medium text-sm">Binance testnet</h2>
@@ -493,7 +493,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 { connected === false && "Connect Wallet" }
                 { connected === true && compressedAccount }
               </span>
-              <img src="../../assets/icons/avatar.svg" alt="avatar" />
+              <img src={`${window.location.origin}/assets/icons/avatar.svg`} alt="avatar" />
             </button>
             <div
               className={`${
@@ -503,7 +503,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
               } lg:absolute top-12 left-0 text-[#fff] z-50 duration-300 dropsDownBg rounded-xl w-full px-3 py-4`}
             >
               <div className="flex items-center px-2 my-1 hover:bg-[#242A38] cursor-pointer p-2 rounded-lg">
-                <img src="../../assets/icons/dashboard.svg" alt="dashboard" />
+                <img src={`${window.location.origin}/assets/icons/dashboard.svg`} alt="dashboard" />
                 <span className="text-sm ml-3" onClick={() => {                    
                     setShowLogoutMenu(!showLogoutMenu); 
                     navigate("/overview");
@@ -511,7 +511,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
               </div>
 
               <div className="flex items-center px-2 my-1 hover:bg-[#242A38] cursor-pointer p-2 rounded-lg">
-                <img src="../../assets/icons/support.svg" alt="support" />
+                <img src={`${window.location.origin}/assets/icons/support.svg`} alt="support" />
                 <span className="text-sm ml-3"
                 onClick={() => {                    
                     setShowLogoutMenu(!showLogoutMenu); 
@@ -519,7 +519,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
               </div>
 
               <div className="flex items-center px-2 my-1 hover:bg-[#242A38] cursor-pointer p-2 rounded-lg">
-                <img src="../../assets/icons/logout.svg" alt="logout" />
+                <img src={`${window.location.origin}/assets/icons/logout.svg`} alt="logout" />
                 <span className="text-sm ml-3"
                   onClick={() => {                    
                     setShowLogoutMenu(!showLogoutMenu); onClickDisconnect();
