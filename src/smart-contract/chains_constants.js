@@ -22,130 +22,130 @@ export const TEST_ARBITRUM_NETWORK_ID = "421611";
 export const DEFAULT_CHAIN_ID = RINKEBY_CHAIN_ID;
 
 export const chains = {
-    [BSC_CHAIN_ID]:{
-        rpcUrl:"https://bsc-dataseed1.binance.org/",
-        nativeCurrency:"BNB",
-        factoryAddress:"0x3Fa06e4703B9c053AF142328f8654Cb117FE7FD9",
-        givePointAddress:"0xDD3A45a81eb884cd2EE773DE4921F76E8b5B712c",
-        blockScanUrl:"https://bscscan.com/"
+    [BSC_CHAIN_ID]: {
+        rpcUrl: "https://bsc-dataseed1.binance.org/",
+        nativeCurrency: "BNB",
+        factoryAddress: "0x3Fa06e4703B9c053AF142328f8654Cb117FE7FD9",
+        givePointAddress: "0xDD3A45a81eb884cd2EE773DE4921F76E8b5B712c",
+        blockScanUrl: "https://bscscan.com/"
     },
-    [BSC_NETWORK_ID]:{
-        rpcUrl:"https://bsc-dataseed1.binance.org/",
-        nativeCurrency:"BNB",
-        factoryAddress:"0x3Fa06e4703B9c053AF142328f8654Cb117FE7FD9",
-        givePointAddress:"0xDD3A45a81eb884cd2EE773DE4921F76E8b5B712c",
-        blockScanUrl:"https://bscscan.com/"
+    [BSC_NETWORK_ID]: {
+        rpcUrl: "https://bsc-dataseed1.binance.org/",
+        nativeCurrency: "BNB",
+        factoryAddress: "0x3Fa06e4703B9c053AF142328f8654Cb117FE7FD9",
+        givePointAddress: "0xDD3A45a81eb884cd2EE773DE4921F76E8b5B712c",
+        blockScanUrl: "https://bscscan.com/"
     },
-    [POLYGON_CHAIN_ID]:{
-        rpcUrl:"https://rinkeby.infura.io/v3/08ac79d88b5d4aea961ca36af7ea6ee7",
-        nativeCurrency:"MATIC",
-        factoryAddress:"0x9d4EB3F30854cA4B46554313611F110E57104e9C",
-        givePointAddress:"0x7F449ED088D620D77f66d4a17DFc3117B000BBf7",
-        blockScanUrl:"https://polygonscan.com/"
+    [POLYGON_CHAIN_ID]: {
+        rpcUrl: "https://rinkeby.infura.io/v3/08ac79d88b5d4aea961ca36af7ea6ee7",
+        nativeCurrency: "MATIC",
+        factoryAddress: "0x9d4EB3F30854cA4B46554313611F110E57104e9C",
+        givePointAddress: "0x7F449ED088D620D77f66d4a17DFc3117B000BBf7",
+        blockScanUrl: "https://polygonscan.com/"
     },
-    [POLYGON_NETWORK_ID]:{
-        rpcUrl:"https://rinkeby.infura.io/v3/08ac79d88b5d4aea961ca36af7ea6ee7",
-        nativeCurrency:"MATIC",
-        factoryAddress:"0x9d4EB3F30854cA4B46554313611F110E57104e9C",
-        givePointAddress:"0x7F449ED088D620D77f66d4a17DFc3117B000BBf7",
-        blockScanUrl:"https://polygonscan.com/"
+    [POLYGON_NETWORK_ID]: {
+        rpcUrl: "https://rinkeby.infura.io/v3/08ac79d88b5d4aea961ca36af7ea6ee7",
+        nativeCurrency: "MATIC",
+        factoryAddress: "0x9d4EB3F30854cA4B46554313611F110E57104e9C",
+        givePointAddress: "0x7F449ED088D620D77f66d4a17DFc3117B000BBf7",
+        blockScanUrl: "https://polygonscan.com/"
     },
-    [OPTIMISTIC_CHAIN_ID]:{
-        rpcUrl:"https://mainnet.optimism.io/",
-        nativeCurrency:"ETH",
-        factoryAddress:"0x02313d5c2Aeb3B0bdF5C6725a2a1b0400BfCD83b",
-        givePointAddress:"0x06241DC412EfDfc4cBfe773fDAd4bBfFb32D6f37",
-        blockScanUrl:"https://optimistic.etherscan.io/"
+    [OPTIMISTIC_CHAIN_ID]: {
+        rpcUrl: "https://mainnet.optimism.io/",
+        nativeCurrency: "ETH",
+        factoryAddress: "0xCA091f771124dF584620af06C43ddF49e0BB502D",
+        givePointAddress: "0x18a12dfeAB833b7D391D22bCb6002f1CD25B838B",
+        blockScanUrl: "https://optimistic.etherscan.io/"
     },
-    [OPTIMISTIC_NETWORK_ID]:{
-        rpcUrl:"https://mainnet.optimism.io/",
-        nativeCurrency:"ETH",
-        factoryAddress:"0x02313d5c2Aeb3B0bdF5C6725a2a1b0400BfCD83b",
-        givePointAddress:"0x06241DC412EfDfc4cBfe773fDAd4bBfFb32D6f37",
-        blockScanUrl:"https://optimistic.etherscan.io/"
+    [OPTIMISTIC_NETWORK_ID]: {
+        rpcUrl: "https://mainnet.optimism.io/",
+        nativeCurrency: "ETH",
+        factoryAddress: "0xCA091f771124dF584620af06C43ddF49e0BB502D",
+        givePointAddress: "0x18a12dfeAB833b7D391D22bCb6002f1CD25B838B",
+        blockScanUrl: "https://optimistic.etherscan.io/"
     },
-    [GNOSIS_CHAIN_ID]:{
-        rpcUrl:"https://rpc.ankr.com/gnosis",
-        nativeCurrency:"xDAI",
-        factoryAddress:"0x072CFC391B46426808Ad92906a939362E290994a",
-        givePointAddress:"0x9A1175970B9940F6AFECd740dF70b148aA0Ab525",
-        blockScanUrl:"https://gnosisscan.io"
+    [GNOSIS_CHAIN_ID]: {
+        rpcUrl: "https://rpc.ankr.com/gnosis",
+        nativeCurrency: "xDAI",
+        factoryAddress: "0x3D2d157070A4F7254E64f90d9A7ceb0e633BCf12",
+        givePointAddress: "0x74F6D3E611C1D87754eF6c9F7AefE6d92a21B2f7",
+        blockScanUrl: "https://gnosisscan.io"
     },
-    [GNOSIS_NETWORK_ID]:{
-        rpcUrl:"https://rpc.ankr.com/gnosis",
-        nativeCurrency:"xDAI",
-        factoryAddress:"0x072CFC391B46426808Ad92906a939362E290994a",
-        givePointAddress:"0x9A1175970B9940F6AFECd740dF70b148aA0Ab525",
-        blockScanUrl:"https://gnosisscan.io"
+    [GNOSIS_NETWORK_ID]: {
+        rpcUrl: "https://rpc.ankr.com/gnosis",
+        nativeCurrency: "xDAI",
+        factoryAddress: "0x3D2d157070A4F7254E64f90d9A7ceb0e633BCf12",
+        givePointAddress: "0x74F6D3E611C1D87754eF6c9F7AefE6d92a21B2f7",
+        blockScanUrl: "https://gnosisscan.io"
     },
-    [ARBITRUM_CHAIN_ID]:{
-        rpcUrl:"https://arb1.arbitrum.io/rpc",
-        nativeCurrency:"ETH",
-        factoryAddress:"0x9d4EB3F30854cA4B46554313611F110E57104e9C",
-        givePointAddress:"0x7F449ED088D620D77f66d4a17DFc3117B000BBf7",
-        blockScanUrl:"https://arbiscan.io/"
+    [ARBITRUM_CHAIN_ID]: {
+        rpcUrl: "https://arb1.arbitrum.io/rpc",
+        nativeCurrency: "ETH",
+        factoryAddress: "0x4b5626425A62458aa1A5256c75bF678B5e90C2bA",
+        givePointAddress: "0x7DD7d0e4985363051e993C3EABAf6493A7691F50",
+        blockScanUrl: "https://arbiscan.io/"
     },
-    [ARBITRUM_NETWORK_ID]:{
-        rpcUrl:"https://arb1.arbitrum.io/rpc",
-        nativeCurrency:"ETH",
-        factoryAddress:"0x9d4EB3F30854cA4B46554313611F110E57104e9C",
-        givePointAddress:"0x7F449ED088D620D77f66d4a17DFc3117B000BBf7",
-        blockScanUrl:"https://arbiscan.io/"
+    [ARBITRUM_NETWORK_ID]: {
+        rpcUrl: "https://arb1.arbitrum.io/rpc",
+        nativeCurrency: "ETH",
+        factoryAddress: "0x4b5626425A62458aa1A5256c75bF678B5e90C2bA",
+        givePointAddress: "0x7DD7d0e4985363051e993C3EABAf6493A7691F50",
+        blockScanUrl: "https://arbiscan.io/"
     },
-    [BSC_TEST_CHAIN_ID]:{
-        rpcUrl:"https://data-seed-prebsc-1-s1.binance.org:8545/",
-        nativeCurrency:"tBNB",
-        factoryAddress:"0x319Ad45FFFee91d7eE1679E4E58F2852cCfb0f4E",
-        givePointAddress:"0x3c206F9Fc428010964Ea4536dB8440a115c121B8",
-        blockScanUrl:"https://testnet.bscscan.com/"
+    [BSC_TEST_CHAIN_ID]: {
+        rpcUrl: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+        nativeCurrency: "tBNB",
+        factoryAddress: "0x690f275c8e0a57007305a36d353d50ccf0da12b3",
+        givePointAddress: "0x7e504Ca40c55E15F9Ee76a850caCfA6FD63b6254",
+        blockScanUrl: "https://testnet.bscscan.com/"
     },
-    [BSC_TEST_NETWORK_ID]:{
-        rpcUrl:"https://data-seed-prebsc-1-s1.binance.org:8545/",
-        nativeCurrency:"tBNB",
-        factoryAddress:"0x319Ad45FFFee91d7eE1679E4E58F2852cCfb0f4E",
-        givePointAddress:"0x3c206F9Fc428010964Ea4536dB8440a115c121B8",
-        blockScanUrl:"https://testnet.bscscan.com/"
+    [BSC_TEST_NETWORK_ID]: {
+        rpcUrl: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+        nativeCurrency: "tBNB",
+        factoryAddress: "0x690f275c8e0a57007305a36d353d50ccf0da12b3",
+        givePointAddress: "0x7e504Ca40c55E15F9Ee76a850caCfA6FD63b6254",
+        blockScanUrl: "https://testnet.bscscan.com/"
     },
-    [MUMBAI_CHAIN_ID]:{
-        rpcUrl:"https://matic-mumbai.chainstacklabs.com",
-        nativeCurrency:"MATIC",
-        factoryAddress:"0x3aB361aA65FF78d42B40E3c5b2Dbdede3D392C25",
-        givePointAddress:"0x06e131CD3DE20bbCd14a684bf743aC8BC37aa949",
-        blockScanUrl:"https://mumbai.polygonscan.com/"
+    [MUMBAI_CHAIN_ID]: {
+        rpcUrl: "https://matic-mumbai.chainstacklabs.com",
+        nativeCurrency: "MATIC",
+        factoryAddress: "0x3D2d157070A4F7254E64f90d9A7ceb0e633BCf12",
+        givePointAddress: "0x74F6D3E611C1D87754eF6c9F7AefE6d92a21B2f7",
+        blockScanUrl: "https://mumbai.polygonscan.com/"
     },
-    [MUMBAI_NETWORK_ID]:{
-        rpcUrl:"https://matic-mumbai.chainstacklabs.com",
-        nativeCurrency:"MATIC",
-        factoryAddress:"0x3aB361aA65FF78d42B40E3c5b2Dbdede3D392C25",
-        givePointAddress:"0x06e131CD3DE20bbCd14a684bf743aC8BC37aa949",
-        blockScanUrl:"https://mumbai.polygonscan.com/"
-    },  
-    [GOERLI_CHAIN_ID]:{
-        rpcUrl:"https://goerli.optimism.io/",
-        nativeCurrency:"GoerliETH",
-        factoryAddress:"0xFf28D45CcEbC110A24340d9de14D29d3A08AbDb8",
-        givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
-        blockScanUrl:"https://goerli.etherscan.io/"
-    },  
-    [GOERLI_NETWORK_ID]:{
-        rpcUrl:"https://goerli.optimism.io/",
-        nativeCurrency:"GoerliETH",
-        factoryAddress:"0xFf28D45CcEbC110A24340d9de14D29d3A08AbDb8",
-        givePointAddress:"0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
-        blockScanUrl:"https://goerli.etherscan.io/"
+    [MUMBAI_NETWORK_ID]: {
+        rpcUrl: "https://matic-mumbai.chainstacklabs.com",
+        nativeCurrency: "MATIC",
+        factoryAddress: "0x3D2d157070A4F7254E64f90d9A7ceb0e633BCf12",
+        givePointAddress: "0x74F6D3E611C1D87754eF6c9F7AefE6d92a21B2f7",
+        blockScanUrl: "https://mumbai.polygonscan.com/"
     },
-    [TEST_ARBITRUM_CHAIN_ID]:{
-        rpcUrl:"https://rinkeby.arbitrum.io/rpc",
-        nativeCurrency:"ETH",
-        factoryAddress:"0xCA091f771124dF584620af06C43ddF49e0BB502D",
-        givePointAddress:"0x18a12dfeAB833b7D391D22bCb6002f1CD25B838B",
-        blockScanUrl:"https://testnet.arbiscan.io/"
-    },  
-    [TEST_ARBITRUM_NETWORK_ID]:{
-        rpcUrl:"https://rinkeby.arbitrum.io/rpc",
-        nativeCurrency:"ETH",
-        factoryAddress:"0xCA091f771124dF584620af06C43ddF49e0BB502D",
-        givePointAddress:"0x18a12dfeAB833b7D391D22bCb6002f1CD25B838B",
-        blockScanUrl:"https://testnet.arbiscan.io/"
-    },  
+    [GOERLI_CHAIN_ID]: {
+        rpcUrl: "https://goerli.optimism.io/",
+        nativeCurrency: "GoerliETH",
+        factoryAddress: "0xFf28D45CcEbC110A24340d9de14D29d3A08AbDb8",
+        givePointAddress: "0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
+        blockScanUrl: "https://goerli.etherscan.io/"
+    },
+    [GOERLI_NETWORK_ID]: {
+        rpcUrl: "https://goerli.optimism.io/",
+        nativeCurrency: "GoerliETH",
+        factoryAddress: "0xFf28D45CcEbC110A24340d9de14D29d3A08AbDb8",
+        givePointAddress: "0xb2c5544a5B60757e3A7885A85b42Bc4160609992",
+        blockScanUrl: "https://goerli.etherscan.io/"
+    },
+    [TEST_ARBITRUM_CHAIN_ID]: {
+        rpcUrl: "https://rinkeby.arbitrum.io/rpc",
+        nativeCurrency: "ETH",
+        factoryAddress: "0x4b5626425A62458aa1A5256c75bF678B5e90C2bA",
+        givePointAddress: "0x7DD7d0e4985363051e993C3EABAf6493A7691F50",
+        blockScanUrl: "https://testnet.arbiscan.io/"
+    },
+    [TEST_ARBITRUM_NETWORK_ID]: {
+        rpcUrl: "https://rinkeby.arbitrum.io/rpc",
+        nativeCurrency: "ETH",
+        factoryAddress: "0x4b5626425A62458aa1A5256c75bF678B5e90C2bA",
+        givePointAddress: "0x7DD7d0e4985363051e993C3EABAf6493A7691F50",
+        blockScanUrl: "https://testnet.arbiscan.io/"
+    },
 }
