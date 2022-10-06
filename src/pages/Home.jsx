@@ -25,6 +25,7 @@ import {
 import { backendURL } from "../config";
 import isEmpty from "../utilities/isEmpty";
 import Carousel from "./Carousel";
+import Web3 from "web3";
 
 const CampaignFactory = require("../smart-contract/build/CampaignFactory.json");
 const Campaign = require("../smart-contract/build/Campaign.json");
@@ -197,6 +198,13 @@ export default function Home() {
           )
         );
       }
+      console.log("summary = ", summary);
+      for (let idx = 0; idx < summary.length; idx++) {
+        summary[idx][1] = globalWeb3.utils.fromWei(
+          summary[idx][1].toString(),
+          "ether"
+        );
+      }
       if (campais.length > 0) {
         await axios({
           method: "post",
@@ -211,16 +219,16 @@ export default function Home() {
               let filtered = summaryFromDB.filter(
                 (item) => item.chainId == chainId
               );
+
               if (filtered.length > 0) {
                 for (let idx = 0; idx < summary.length; idx++) {
+                  console.log(summary[idx][1]);
+
                   let found =
                     filtered.find((item) => item._id == summary[idx][10]) ||
                     undefined;
+
                   if (found) {
-                    summary[idx][1] = globalWeb3.utils.fromWei(
-                      summary[idx][1].toString(),
-                      "ether"
-                    );
                     summary[idx][5] = found.name;
                     summary[idx][6] = found.description;
                     summary[idx][7] = found.imageURL;
