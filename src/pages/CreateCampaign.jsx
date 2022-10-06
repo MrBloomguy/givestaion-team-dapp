@@ -25,7 +25,6 @@ export default function CreateCampaign() {
 	const [copied, setCopied] = useState(false);
 	const [createdAddress, setCreatedAddress] = useState(undefined);
   	const [selectedFile, setSelectedFile] = useState(null);
-	  const [creatingPopup, showCreatingPopup] = useState(false);
 
 	const chainId = useSelector(state => state.auth.currentChainId);
 	const account = useSelector(state => state.auth.currentWallet);
@@ -34,8 +33,7 @@ export default function CreateCampaign() {
 	const navigate = useNavigate();
 
 	const onClickCreateCampaign = async () => {
-		if (globalWeb3 && account && chainId) {			
-			showCreatingPopup(true);
+		if (globalWeb3 && account && chainId) {
 			let imagePath = null;
 			const formData = new FormData();
 			formData.append("itemFile", selectedFile);
@@ -50,7 +48,6 @@ export default function CreateCampaign() {
 					imagePath = response.data.path;
 				})
 				.catch((err) => {		
-					showCreatingPopup(false);
 					console.error(err);
 					// return;
 				})
@@ -70,14 +67,13 @@ export default function CreateCampaign() {
 						creator: account || "",
 						category: category,
 						address: "",
-						chainId: Number(chainId.toString(10)) || ""
+						chainId: chainId || ""
 					}
 				}).then((res) => {
 					if (res.data && res.data.code === 0) {
 						idOnDb = res.data.data._id;
 					}
 				}).catch((err) => {
-					showCreatingPopup(false);
 					console.error(err);
 					//delete image uploaded
 				});
@@ -89,19 +85,17 @@ export default function CreateCampaign() {
 						CampaignFactory,
 						chains[chainId?.toString()].factoryAddress
 					);
-					console.log("chains[chainId?.toString()].factoryAddress = ", chains[chainId?.toString()].factoryAddress);
 					if (factory) {
-						console.log("factory.methods = ", factory.methods);
 						await factory.methods.createCampaign(
-							globalWeb3.utils.toWei(minimum.toString(), "ether").toString() || "10000000000000000",
-							globalWeb3.utils.toWei(target.toString(), "ether").toString() || "100000000000000000000",
+							globalWeb3.utils.toWei(minimum.toString(), "ether"),
+							globalWeb3.utils.toWei(target.toString(), "ether"),
 							idOnDb
-						).send({
-								from: account
+						)
+							.send({
+								from: account,
+								gas: 3000000
 							});
 						
-							console.log("createdCampaignAddress = ", createdCampaignAddress);
-
 						let summary = [], campais = [];
 						if (factory) {
 							campais = await factory.methods.getDeployedCampaigns().call();
@@ -111,7 +105,6 @@ export default function CreateCampaign() {
 							)
 							);
 						}
-						console.log("summary = ", summary);
 						for (let idx = 0; idx < summary.length; idx++) 
 						{
 						  if (summary[idx][10] == idOnDb) 
@@ -120,12 +113,10 @@ export default function CreateCampaign() {
 						  }
 						}
 					} else {
-						showCreatingPopup(false);
 						console.log("creating new campaign : Invalid factoy instance.");
 					}
 				}
 				catch (e) {
-					showCreatingPopup(false);
 					await axios({
 						method: "post",
 						url: `${backendURL}/api/campaign/delete`,
@@ -152,20 +143,16 @@ export default function CreateCampaign() {
 						}
 					}).then((res) => {
 						if (res.data && res.data.code === 0) {
-							showCreatingPopup(false);
 							showPopup(!popup);
 						}
 					}).catch((err) => {
-						showCreatingPopup(false);
 						console.error(err);
 					});
 				}
 			}
 		} else {
-			showCreatingPopup(false);
 			console.log("Invalid web3");
 		}
-		showCreatingPopup(false);
 	}
 
 	const changeFile = (event) => {
@@ -333,23 +320,6 @@ export default function CreateCampaign() {
 					</div>
 				</section>
 			</> : ''}
-
-			{creatingPopup ? <>
-            <section className="popup fixed w-full top-0 left-0 z-50 min-h-screen flex items-center justify-center">
-                <div className="popup-other">
-                    <div className="container">
-                        <div className="donating-popup mx-auto">
-                            <div className="px-3 text-center">
-                                <h6 className='text-sm md:text-2xl mt-3 mb-1 text-white font-bold'>Creating...Please wait.</h6>
-                                <div className='flex justify-center'>
-                                    <img src="/images/donating_spin.png" alt="casual" className='donating_spin' />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </> : ''}
 
 			<UserFooter />
 			{

@@ -310,25 +310,12 @@
 				"type": "uint256"
 			}
 		],
-		"stateMutability": "pure",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getNativeToken",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
 		"stateMutability": "view",
 		"type": "function"
 	},
 	{
 		"inputs": [],
-		"name": "getOwnerAddress",
+		"name": "getNativeToken",
 		"outputs": [
 			{
 				"internalType": "address",

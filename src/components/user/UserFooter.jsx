@@ -15,7 +15,7 @@ const UserFooter = ({ style }) => {
         <Link to={"/"} className="flex items-center">
           <img
             className="w-20 h-20 object-contain"
-            src={`${window.location.origin}/images/logo.png`}
+            src="./images/logo.png"
             alt="logo"
           />
           <h1 className="dark:text-[#fff] text-[#09080C] font-medium text-2xl">
@@ -25,13 +25,16 @@ const UserFooter = ({ style }) => {
         <div>
           <ul className="flex items-center space-x-4">
             <li className="dark:text-[#fff] text-[#09080C] font-normal text-lg">
-              <a href={"https://github.com/GiveStation"}  target="_blank" > Github </a>
+              Github
             </li>
             <li className="dark:text-[#fff] text-[#09080C] font-normal text-lg">
-              <a href={"https://t.me/GiveStation"}  target="_blank" > Telegram </a>
+              Telegram
             </li>
             <li className="dark:text-[#fff] text-[#09080C] font-normal text-lg">
-              <a href={"https://twitter.com/GiveStation"}  target="_blank" > Twitter </a>
+              Twitter
+            </li>
+            <li className="dark:text-[#fff] text-[#09080C] font-normal text-lg">
+              FAQ
             </li>
           </ul>
         </div>
@@ -40,7 +43,7 @@ const UserFooter = ({ style }) => {
             Want to be a partner?
           </p>
           <button className="bg-[#09C9E3] rounded-lg py-2 px-5 text-[#fff] font-semibold">
-            <a href={"https://mailto:info@givestation.org"}  target="_blank" > Contact Us </a>
+            Contact Us
           </button>
         </div>
       </div>

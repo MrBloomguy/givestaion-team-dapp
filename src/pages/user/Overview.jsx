@@ -45,7 +45,7 @@ export default function Overview() {
           url: `${backendURL}/api/donation/getDonationCountsOfUser`,
           data: {
             user: account || "",
-            chainId: Number(chainId.toString(10)) || "",
+            chainId: chainId || "",
           },
         })
           .then((res) => {
@@ -61,7 +61,7 @@ export default function Overview() {
           url: `${backendURL}/api/donation/getTotalDonatedAmountsOfUser`,
           data: {
             user: account || "",
-            chainId: Number(chainId.toString(10)) || "",
+            chainId: chainId || "",
           },
         })
           .then((res) => {
@@ -77,7 +77,7 @@ export default function Overview() {
           url: `${backendURL}/api/campaign/getCampaignCountsOfUser`,
           data: {
             user: account || "",
-            chainId: Number(chainId.toString(10)) || "",
+            chainId: chainId || "",
           },
         })
           .then((res) => {

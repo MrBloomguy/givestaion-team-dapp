@@ -30,7 +30,7 @@ const MyProjects = () => {
         url: `${backendURL}/api/campaign/getCampaignsOfUser`,
         data: {
           user: account || "",
-          chainId: Number(chainId.toString(10)) || "",
+          chainId: chainId || "",
         },
       })
         .then((res) => {
@@ -149,7 +149,7 @@ const MyProjects = () => {
                               <button
                                 onClick={() => {
                                   setIsUpdateClick(!isUpdateClick);
-                                  // onClickUpdate(item?.address);
+                                  onClickUpdate(item?.address);
                                 }}
                                 className="bg-[#52DCF0] text-[#000000] font-bold rounded-2xl flex items-center overflow-hidden justify-center py-3 px-4"
                               >

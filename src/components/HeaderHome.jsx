@@ -25,12 +25,6 @@ import {
   OPTIMISTIC_NETWORK_ID,
   BSC_TEST_CHAIN_ID,
   BSC_TEST_NETWORK_ID,
-  GOERLI_NETWORK_ID,
-  GOERLI_CHAIN_ID,
-  TEST_ARBITRUM_CHAIN_ID,
-  TEST_ARBITRUM_NETWORK_ID,
-  MUMBAI_CHAIN_ID,
-  MUMBAI_NETWORK_ID,
 } from "../smart-contract/chains_constants";
 import Alert from "../pages/Alert";
 
@@ -171,45 +165,28 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
     switch (chainId && chainId.toString()) {
       default:
         break;
-      case GOERLI_CHAIN_ID:
-      case GOERLI_NETWORK_ID:
-        setActive("Optimism Goerli ");
-        setActiveIcon("op.png");
-        setPopup(false);
-        break;
       case OPTIMISTIC_CHAIN_ID:
       case OPTIMISTIC_NETWORK_ID:
         setActive("Optimism");
         setActiveIcon("op.png");
         setPopup(false);
         break;
-      case BSC_TEST_CHAIN_ID:
-      case BSC_TEST_NETWORK_ID:
-        setActive("Binance testnet");
-        setActiveIcon("binance.png");
+      case BSC_CHAIN_ID:
+      case BSC_NETWORK_ID:
+        setActive("Binance");
+        setActiveIcon("protocol.png");
         setPopup(false);
         break;
-      case TEST_ARBITRUM_CHAIN_ID:
-      case TEST_ARBITRUM_NETWORK_ID:
-        setActive("Arbitrum testnet");
-        setActiveIcon("arbitrum.png");
-        setPopup(false);
       case ARBITRUM_CHAIN_ID:
       case ARBITRUM_NETWORK_ID:
         setActive("Arbitrum");
-        setActiveIcon("arbitrum.png");
-        setPopup(false);
-        break;
-      case MUMBAI_CHAIN_ID:
-      case MUMBAI_NETWORK_ID:
-        setActive("Polygon testnet");
-        setActiveIcon("polygon.png");
+        setActiveIcon("symbol.png");
         setPopup(false);
         break;
       case POLYGON_CHAIN_ID:
       case POLYGON_NETWORK_ID:
         setActive("Polygon");
-        setActiveIcon("polygon.png");
+        setActiveIcon("group.png");
         setPopup(false);
         break;
       case GNOSIS_CHAIN_ID:
@@ -221,7 +198,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
       case BSC_TEST_CHAIN_ID:
       case BSC_TEST_NETWORK_ID:
         setActive("BSC Testnet");
-        setActiveIcon("binance.png");
+        setActiveIcon("protocol.png");
         setPopup(false);
         break;
     }
@@ -258,7 +235,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
         <Link to={"/"} className="flex lg:hidden items-center">
           <img
             className="w-20 h-20 object-contain"
-            src={`${window.location.origin}/images/logo.png`}
+            src="./images/logo.png"
             alt="logo"
           />
           <h2 className="font-medium text-2xl text-[#09080C] dark:text-[#fff]">
@@ -275,7 +252,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 setIsOpen(!isOpen);
               }}
               className=" cursor-pointer w-5 h-5 "
-              src={`${window.location.origin}/assets/icons/opener.svg`}
+              src="./assets/icons/opener.svg"
               alt="opener"
             />
           </div>
@@ -292,7 +269,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
           <div className="flex items-center">
             <img
               className="w-16 h-16 object-contain"
-              src={`${window.location.origin}/images/logo.png`}
+              src="./images/logo.png"
               alt="logo"
             />
             <h2 className="font-medium text-2xl text-[#fff]">
@@ -304,7 +281,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
               setIsOpen(!isOpen);
             }}
             className="ml-5 lg:hidden cursor-pointer"
-            src={`${window.location.origin}/assets/icons/close.svg`}
+            src="../../assets/icons/close.svg"
             alt="close"
           />
         </div>
@@ -314,7 +291,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
             <Link to={"/"} className="hidden lg:flex items-center">
               <img
                 className="w-20 h-20 object-contain"
-                src={`${window.location.origin}/images/logo.png`}
+                src="./images/logo.png"
                 alt="logo"
               />
               <h2 className="font-medium text-2xl text-[#09080C] dark:text-[#fff]">
@@ -322,11 +299,9 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
               </h2>
             </Link>
           }
-          <Link to={"/"} >
-            <button className="text-left md:text-center hover:bg-[#00FBFF] hover:md:bg-[#09080C] md:bg-[#09080C] w-full lg:w-auto md:my-2 md:rounded-md py-2 px-4 shadow">            
-              <span className="gradient-text text-base">Grants</span>
-            </button>
-          </Link>
+          <button className="text-left md:text-center hover:bg-[#00FBFF] hover:md:bg-[#09080C] md:bg-[#09080C] w-full lg:w-auto md:my-2 md:rounded-md py-2 px-4 shadow">
+            <span className="gradient-text text-base">Grants</span>
+          </button>
 
           <Link to={"/hackathon"} className="relative bg-[#09080C] w-full lg:w-auto my-2 rounded-md py-2 px-4 shadow">
             <span className="gradient-text text-base">Hackathons</span>
@@ -336,8 +311,9 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
             </div>
           </Link>
           <button className="text-left md:text-center hover:bg-[#00FBFF] hover:md:bg-[#09080C] md:bg-[#09080C] w-full lg:w-auto md:my-2 md:rounded-md py-2 px-4 shadow">
-            <a href="https://snapshot.org/#/?q=GiveStation" target="_blank" ><span className="gradient-text text-base">Governance</span></a>
+            <span className="gradient-text text-base">Governance</span>
           </button>
+          <button></button>
         </div>
         <div className="px-8 md:px-0 mt-5 md:mt-0 space-y-3 lg:space-y-0 lg:space-x-3 flex flex-col lg:flex-row  lg:items-center">
           <div className="relative">
@@ -349,8 +325,8 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 isOptimisimOpen ? " px-10 " : " px-3 "
               } py-2`}
             >
-              {active? <img src={`${window.location.origin}/assets/images/${activeIcon}`} alt="op" /> : <></>}
-              <span className="gradient-text text-base ml-5">{active || "Select a network"}</span>
+              <img src="../../assets/images/op.png" alt="op" />
+              <span className="gradient-text text-base ml-5"> Optimism</span>
             </button>
 
             <div
@@ -367,71 +343,71 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                     setIsOptimisimOpen(!isOptimisimOpen);
                   }}
                   className="cursor-pointer"
-                  src={`${window.location.origin}/assets/icons/close.svg`}
+                  src="../../assets/icons/close.svg"
                   alt="close"
                 />
               </div>
               {
-                chainId && (chainId.toString() === GOERLI_NETWORK_ID || chainId.toString() === GOERLI_CHAIN_ID) ?
+                chainId && (chainId.toString() === OPTIMISTIC_CHAIN_ID || chainId.toString() === OPTIMISTIC_CHAIN_ID) ?
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
-                    <img src={`${window.location.origin}/assets/images/op.png`} alt="op" />
-                    <span className="text-lg ml-3">Optimism Goerli </span>
+                    <img src="../../assets/images/op.png" alt="op" />
+                    <span className="text-lg ml-3"> Optimism</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
                 </div>
                 :
                 <div className="flex my-1 items-center hover:bg-[#242A38] cursor-pointer  px-0 py-2 rounded-lg"
-                  onClick={() => onClickChangeNetwork(GOERLI_CHAIN_ID) }>
+                  onClick={() => onClickChangeNetwork(OPTIMISTIC_CHAIN_ID) }>
                   <img
                     className="w-8 h-8 mr-3"
-                    src={`${window.location.origin}/assets/images/op.png`}
+                    src="../../assets/images/op.png"
                     alt="optimism"
                   />{" "}
-                  <h2 className="font-medium text-sm">Optimism Goerli </h2>
+                  <h2 className="font-medium text-sm">Optimism</h2>
                 </div>
               } 
               {
-                chainId && (chainId.toString() === TEST_ARBITRUM_CHAIN_ID || chainId.toString() === TEST_ARBITRUM_NETWORK_ID) ?
+                chainId && (chainId.toString() === ARBITRUM_CHAIN_ID || chainId.toString() === ARBITRUM_NETWORK_ID) ?
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
-                    <img src={`${window.location.origin}/assets/images/arbitrum.png`} alt="op" />
-                    <span className="text-lg ml-3"> Arbitrum testnet</span>
+                    <img src="../../assets/images/arbitrum.png" alt="op" />
+                    <span className="text-lg ml-3"> Arbitrum</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
                 </div>
                 :
                 <div className="flex my-1 items-center hover:bg-[#242A38] cursor-pointer  px-0 py-2 rounded-lg"
-                  onClick={() => onClickChangeNetwork(TEST_ARBITRUM_CHAIN_ID) }>
+                  onClick={() => onClickChangeNetwork(ARBITRUM_CHAIN_ID) }>
                   <img
                     className="w-8 h-8 mr-3"
-                    src={`${window.location.origin}/assets/images/arbitrum.png`}
+                    src="../../assets/images/arbitrum.png"
                     alt="arbitrum"
                   />{" "}
-                  <h2 className="font-medium text-sm">Arbitrum testnet</h2>
+                  <h2 className="font-medium text-sm">Arbitrum</h2>
                 </div>
               }
               {
-                chainId && (chainId.toString() === MUMBAI_CHAIN_ID || chainId.toString() === MUMBAI_NETWORK_ID) ?
+                chainId && (chainId.toString() === POLYGON_CHAIN_ID || chainId.toString() === POLYGON_NETWORK_ID) ?
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
-                    <img src={`${window.location.origin}/assets/images/polygon.png`} alt="op" />
-                    <span className="text-lg ml-3">Polygon testnet</span>
+                    <img src="../../assets/images/polygon.png" alt="op" />
+                    <span className="text-lg ml-3"> Polygon</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
                 </div>
                 :
                 <div className="flex my-1 items-center hover:bg-[#242A38] cursor-pointer  px-0 py-2 rounded-lg"
-                  onClick={() => onClickChangeNetwork(MUMBAI_CHAIN_ID) }>
+                  onClick={() => onClickChangeNetwork(POLYGON_CHAIN_ID) }>
                   <img
                     className="w-8 h-8 mr-3"
-                    src={`${window.location.origin}/assets/images/polygon.png`}
+                    src="../../assets/images/polygon.png"
                     alt="polygon"
                   />
-                  <h2 className="font-medium text-sm">Polygon testnet</h2>
+                  <h2 className="font-medium text-sm">Polygon</h2>
                 </div>
               }
               {
@@ -439,7 +415,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
-                    <img src={`${window.location.origin}/assets/images/gnosis.png`} alt="op" />
+                    <img src="../../assets/images/gnosis.png" alt="op" />
                     <span className="text-lg ml-3"> Gnosis</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
@@ -450,32 +426,32 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 >
                   <img
                     className="w-8 h-8 mr-3"
-                    src={`${window.location.origin}/assets/images/gnosis.png`}
+                    src="../../assets/images/gnosis.png"
                     alt="gnosis"
                   />
                   <h2 className="font-medium text-sm">Gnosis</h2>
                 </div>
               }
               {
-                chainId && (chainId.toString() === BSC_TEST_CHAIN_ID || chainId.toString() === BSC_TEST_NETWORK_ID) ?
+                chainId && (chainId.toString() === BSC_CHAIN_ID || chainId.toString() === BSC_NETWORK_ID) ?
                 <div className="flex my-5 items-center justify-between"
                 >
                   <div className="flex items-center">
-                    <img src={`${window.location.origin}/assets/images/binance.png`} alt="op" />
-                    <span className="text-lg ml-3"> Binance testnet</span>
+                    <img src="../../assets/images/binance.png" alt="op" />
+                    <span className="text-lg ml-3"> Binance</span>
                   </div>                
                     <div className="w-3 h-3 bg-[#07D942] rounded-full"></div>
                 </div>
                 :
                 <div className="flex my-1 items-center hover:bg-[#242A38] cursor-pointer  px-0 py-2 rounded-lg"
-                  onClick={() => onClickChangeNetwork(BSC_TEST_CHAIN_ID)}
+                  onClick={() => onClickChangeNetwork(BSC_CHAIN_ID)}
                 >
                   <img
                     className="w-8 h-8 mr-3"
-                    src={`${window.location.origin}/assets/images/binance.png`}
+                    src="../../assets/images/binance.png"
                     alt="binance"
                   />
-                  <h2 className="font-medium text-sm">Binance testnet</h2>
+                  <h2 className="font-medium text-sm">Binance</h2>
                 </div>
               }
             </div>
@@ -493,7 +469,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
                 { connected === false && "Connect Wallet" }
                 { connected === true && compressedAccount }
               </span>
-              <img src={`${window.location.origin}/assets/icons/avatar.svg`} alt="avatar" />
+              <img src="../../assets/icons/avatar.svg" alt="avatar" />
             </button>
             <div
               className={`${
@@ -503,7 +479,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
               } lg:absolute top-12 left-0 text-[#fff] z-50 duration-300 dropsDownBg rounded-xl w-full px-3 py-4`}
             >
               <div className="flex items-center px-2 my-1 hover:bg-[#242A38] cursor-pointer p-2 rounded-lg">
-                <img src={`${window.location.origin}/assets/icons/dashboard.svg`} alt="dashboard" />
+                <img src="../../assets/icons/dashboard.svg" alt="dashboard" />
                 <span className="text-sm ml-3" onClick={() => {                    
                     setShowLogoutMenu(!showLogoutMenu); 
                     navigate("/overview");
@@ -511,7 +487,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
               </div>
 
               <div className="flex items-center px-2 my-1 hover:bg-[#242A38] cursor-pointer p-2 rounded-lg">
-                <img src={`${window.location.origin}/assets/icons/support.svg`} alt="support" />
+                <img src="../../assets/icons/support.svg" alt="support" />
                 <span className="text-sm ml-3"
                 onClick={() => {                    
                     setShowLogoutMenu(!showLogoutMenu); 
@@ -519,7 +495,7 @@ export default function Header( {isSideBarOpen = false, setIsSideBarOpen} ) {
               </div>
 
               <div className="flex items-center px-2 my-1 hover:bg-[#242A38] cursor-pointer p-2 rounded-lg">
-                <img src={`${window.location.origin}/assets/icons/logout.svg`} alt="logout" />
+                <img src="../../assets/icons/logout.svg" alt="logout" />
                 <span className="text-sm ml-3"
                   onClick={() => {                    
                     setShowLogoutMenu(!showLogoutMenu); onClickDisconnect();
