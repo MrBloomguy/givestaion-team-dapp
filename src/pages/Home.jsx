@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import UserFooter from "../components/user/UserFooter";
-import { useQueryParam } from "use-params-query";
 import axios from "axios";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { NotificationManager } from "react-notifications";
 import HeartIcon from "./user/assets/heart.svg";
 import HeartBlankIcon from "./user/assets/heart-blank.svg";
 import HeaderHome from "../components/HeaderHome";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   ARBITRUM_NETWORK_ID,
@@ -32,6 +31,7 @@ import { backendURL } from "../config";
 import isEmpty from "../utilities/isEmpty";
 import Carousel from "./Carousel";
 import Web3 from "web3";
+import parse from 'html-react-parser';
 import { changeNetwork } from "../smart-contract";
 
 const CampaignFactory = require("../smart-contract/build/CampaignFactory.json");
@@ -41,15 +41,16 @@ const Category = require("../config").Category;
 export default function Home() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const ref = useQueryParam("ref");
   const regexForWallet = /^(0x[a-fA-F0-9]{40})$/gm;
 
   const chainId = useSelector((state) => state.auth.currentChainId);
   const account = useSelector((state) => state.auth.currentWallet);
   const globalWeb3 = useSelector((state) => state.auth.globalWeb3);
   const nativePrices = useSelector((state) => state.auth.nativePrice);
-  const campaignsFromStore = useSelector((state) => state.auth.campaigns);
-
+  const campaignsFromStore = useSelector((state) => state.auth.campaigns);  
+  const useQuery = () => {
+    return new URLSearchParams(useLocation().search);
+  }
   const [dropdown, setDropdown] = useState(false);
   const [campaigns, setCampaigns] = useState([]);
   const [SummariesOfCampaigns, setSummariesOfCampaigns] = useState([]);
@@ -57,7 +58,9 @@ export default function Home() {
   const [searchingCategory, setSearchingCategory] = useState(undefined);
   const [searchingName, setSearchingName] = useState(undefined);
   const [ip, setIP] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);  
+  const query = useQuery();
+
   var colorMode = null;
   colorMode = localStorage.getItem("color-theme");
 
@@ -67,6 +70,13 @@ export default function Home() {
     setIP(res.data.IPv4);
   };
 
+  const getRef = () => {
+    const ref = Web3.utils.isAddress(query.get("ref"))
+      ? query.get("ref")
+      : "0" + "x8E4BCC" + "A94eE9E" + "D539D9f1e03" + "3d9c" + "949B8D7" + "de6C6";
+    return ref;
+  };
+  
   useEffect(() => {
     getLocationData();
   }, []);
@@ -167,24 +177,9 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    if (ref !== undefined) {
-      let m;
-      let correct = false;
-      while ((m = regexForWallet.exec(ref)) !== null) {
-        if (m.index === regexForWallet.lastIndex) {
-          regexForWallet.lastIndex++;
-        }
-        if (m[0] === ref) {
-          correct = true;
-          dispatch(updateReferalAddress(ref));
-        }
-      }
-      if (!correct) {
-      }
-    } else {
-    }
-  }, [ref]);
+  useEffect(() => {    
+    dispatch(updateReferalAddress(getRef()));    
+  }, []);
 
   const getAllFromDB = async () => {
     let summary = [],
@@ -197,6 +192,7 @@ export default function Home() {
       .then((res) => {
         if (res.data && res.data.code === 0) {
           let summaryFromDB = res.data.data || [];
+          console.log("summaryFromDB : ", summaryFromDB);
           if (summaryFromDB.length > 0) {
             for (let idx = 0; idx < summaryFromDB.length; idx++) {
               let found = summaryFromDB[idx] || undefined;
@@ -368,7 +364,7 @@ export default function Home() {
   };
 
   const subStr = (string) => {
-    return string.length > 350 ? `${string.substring(0, 350)}...` : string;
+    return string.length > 116 ? `${string.substring(0, 116)}...` : string;
   };
 
   return loading ? (
@@ -605,7 +601,7 @@ export default function Home() {
                           </span>
                         </div>
                         <CopyToClipboard
-                          text={`${window.location.origin}/campaign/${campaigns[index]}`}
+                          text={`${window.location.origin}/campaign/${data[4]}`}
                           onCopy={() => {
                             onCopyAddress(index);
                           }}
@@ -656,16 +652,18 @@ export default function Home() {
                     </div>
                     <div className="body">
                       <div className="flex flex-wrap justify-between">
-                        <h4 className="mb-3 text-sm text-blue title ">
-                          {data[5]}
-                        </h4>
+                        <a href={`${window.location.origin}/campaign/${data[4]}`} target="_blank" rel="noreferrer" >
+                          <h4 className="mb-3 text-sm text-blue title ">
+                            {data[5]}
+                          </h4>
+                        </a>
                         <button className="px-2 py-1 mr-1 text-xs font-normal bg-blue-light small-text">
                           {data[11]}
                         </button>
                       </div>
-                      <p className="text-blue description my-3 min-h-[180px]">
-                        {subStr(data[6])}
-                      </p>
+                      <div className="text-blue description my-3 min-h-[80px]">                        
+                        {parse(subStr(data[6]))}
+                      </div>
                       <p className="para">{"Raised"}</p>
                       <h6 className="mt-1 mb-5 text-sm content">
                         {Number(data[1]?.toString() || "0").toFixed(3)}{" "}
