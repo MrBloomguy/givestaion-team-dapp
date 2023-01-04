@@ -32,7 +32,7 @@ import {
   MUMBAI_CHAIN_ID,
   MUMBAI_NETWORK_ID,
 } from "../smart-contract/chains_constants";
-import Alert from "../pages/Alert";
+import { NotificationManager } from "react-notifications";
 
 export const providerOptions = {
   walletconnect: {
@@ -58,10 +58,6 @@ export default function Header({ isSideBarOpen = false, setIsSideBarOpen }) {
   const [popup, setPopup] = useState(false);
   const [connectPopup, setConnectPopup] = useState(false);
   const [provider, setProvider] = useState(null);
-  const [alertType, setAlertType] = useState("");
-  const [alertContent, setAlertContent] = useState("");
-  const [alertTitle, setAlertTitle] = useState("");
-  const [showAlert, setShowAlert] = useState(false);
   const [showLogoutMenu, setShowLogoutMenu] = useState(false);
   const [compressedAccount, setCompressedAccount] = useState("");
 
@@ -70,10 +66,6 @@ export default function Header({ isSideBarOpen = false, setIsSideBarOpen }) {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const onCloseAlert = () => {
-    setShowAlert(false);
-  };
 
   useEffect(() => {
     if (account && chainId) {
@@ -102,7 +94,7 @@ export default function Header({ isSideBarOpen = false, setIsSideBarOpen }) {
       dispatch(setConnectedChainId(chainId));
       setActiveNetwork(chainId);
     } catch (error) {
-      console.error(error);
+      console.log(error);
       setConnected(false);
       dispatch(setConnectedWalletAddress(null));
     }
@@ -230,22 +222,19 @@ export default function Header({ isSideBarOpen = false, setIsSideBarOpen }) {
   const onClickChangeNetwork = async (chainId) => {
     try {
       let result = await changeNetwork(chainId);
-      if (result && result.success === true) {
-        dispatch(setConnectedChainId(chainId));
-        setActiveNetwork(chainId);
-        onClickConnectWallet();
-      } else {
-        // setAlertType("warning");
-        // setAlertContent("Please check your wallet. Try adding the chain to Wallet first.");
-        // setAlertTitle("Warning");
-        // setShowAlert(true);
+      if (result)
+      {
+          if(result.success === true) {
+          dispatch(setConnectedChainId(chainId));
+          setActiveNetwork(chainId);
+          onClickConnectWallet();
+        } else {          
+          NotificationManager.warning(<div><span>{result.message}</span><br></br><span>Please check your wallet. Try adding the chain to Wallet first.</span></div>);
+        }
       }
     } catch (error) {
-      console.error(error);
-      setAlertType("error");
-      setAlertContent(error);
-      setAlertTitle("Error");
-      setShowAlert(true);
+      console.log(error);
+     
     }
   };
   const [isOptimisimOpen, setIsOptimisimOpen] = useState(false);
@@ -583,6 +572,7 @@ export default function Header({ isSideBarOpen = false, setIsSideBarOpen }) {
                   onClick={() => {
                     setShowLogoutMenu(!showLogoutMenu);
                     onClickDisconnect();
+                    window.location.reload();
                   }}
                 >
                   {" "}
@@ -596,11 +586,7 @@ export default function Header({ isSideBarOpen = false, setIsSideBarOpen }) {
           </div>
         </div>
       </div>
+      
     </div>
-
-    // 	{showAlert === true &&
-    // 		<Alert type={alertType} title={alertTitle} content={alertContent} onClose={onCloseAlert} />
-    // 	}
-    // </div>
   );
 }
