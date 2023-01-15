@@ -4,7 +4,7 @@ export const backendURL="https://admin.givestation.org";
 
 export const Category = [
     "See All",
-   'Defi',
+    'Defi',
     'Education',
     'Blockchain',
     'Fintech',
@@ -37,4 +37,6 @@ export const Category = [
     "Event",
     "Space",
     "Other",
+    "Gaming",
+    "Sponsorship"
 ];
